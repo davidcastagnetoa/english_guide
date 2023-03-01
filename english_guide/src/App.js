@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import HomeScreen from "./screens/Home";
 import HomeSection from "./screens/HomeSection";
 
+import { LanguageProvider } from "./components/context/LanguageContext";
+
 const App = () => {
   // const navigate = useNavigate();
 
@@ -14,11 +16,12 @@ const App = () => {
   // }, []);
 
   return (
-    <Routes>
-      <Route path="/*" element={<HomeScreen />} />
-      <Route path="/*" element={<HomeSection />} />
-
-    </Routes>
+    <LanguageProvider>
+      <Routes>
+        <Route path="/*" element={<HomeScreen />} />
+        <Route path="/*" element={<HomeSection />} />
+      </Routes>
+    </LanguageProvider>
   );
 };
 

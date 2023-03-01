@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { LanguageContext } from "../components/context/LanguageContext";
 
 const RobberyScreen = () => {
+  const { language } = useContext(LanguageContext);
   return (
     <div>
-      <h1>Content</h1>
+      {language === "english" ? "Robbery" : "Robos"}
     </div>
   );
 }

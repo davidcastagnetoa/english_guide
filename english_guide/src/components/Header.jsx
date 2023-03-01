@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/images/logo_securitas.webp";
 import { IoMdSearch } from "react-icons/io";
 import Switcher from "./Switcher";
 import DropdownMenu from "./DropdownMenu";
+import { LanguageContext } from "./context/LanguageContext";
 
 const Header = (props) => {
   const { searchTerm, setSearchTerm } = props;
   const [toggleSidebar, setToggleSidebar] = useState(true);
-  const [language, setLanguage] = useState("english");
+  const { language } = useContext(LanguageContext);
 
   function handleClick() {
     setToggleSidebar((prevState) => !prevState);
-  }
-
-  function handleLanguageChange(newLanguage) {
-    setLanguage(newLanguage);
   }
 
   const handleWindowResize = () => {
@@ -53,7 +50,7 @@ const Header = (props) => {
           </div>
           <div className="flex items-center lg:order-2 lg:w-96 w-full space-x-1 ">
             {/* Language Toggle Button */}
-            <DropdownMenu onLanguageChange={handleLanguageChange} />
+            <DropdownMenu/>
             {/* input search */}
             <div className="flex justify-start items-center w-full mr-2 px-2 rounded-md bg-l_gold_primary dark:bg-gh-bg-primary border-none outline-none focus-within:shadow-sm">
               <IoMdSearch fontSize={25} className="ml-1" />

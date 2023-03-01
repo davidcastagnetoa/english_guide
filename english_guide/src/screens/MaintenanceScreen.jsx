@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { LanguageContext } from "../components/context/LanguageContext";
 
 const MaintenanceScreen = () => {
+  const { language } = useContext(LanguageContext);
+  
   return (
     <div>
-      Maintenance
+      {language === "english" ? "Maintenance" : "Mantenimientos"}
     </div>
   );
 }

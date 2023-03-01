@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { LanguageContext } from '../components/context/LanguageContext';
 
 const MailsScreen = () => {
+  const { language } = useContext(LanguageContext) 
   return (
     <div>
-      Mails
-    </div>
+    {language === "english" ? "Mails" : "Emails"}
+  </div>
   );
 }
 
