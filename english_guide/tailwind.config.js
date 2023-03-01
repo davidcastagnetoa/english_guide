@@ -157,8 +157,38 @@ module.exports = {
         'sd_btn_primary':'#f2f4f6',
         'sd_btn_primary_hover':'#e3e7ec',
         'sd_btn_alternative':'#F03200',
-        'sd_btn_alternative_hover':'#a91636'
+        'sd_btn_alternative_hover':'#a91636',
 
+        //English Guide Colors
+        //Style 1
+        //Light Mode
+        'st1_primary_eg': '#ffffff',
+        'st1_econdary_eg': '#f3f3f4',
+        'st1_ctive_en': '#fd1a3a',
+        'st1_nactive_en': '#ffa0ab',
+        'st1_ext_primary_en': '#2d2d2d',
+        'st1_ext_secondary_en': '#3e3e3e',
+
+        //Dark Mode
+        'st1_d_primary_eg': '#162225',
+        'st1_d_secondary_eg': '#292f38',
+        'st1_d_active_en': '#00d2b2',
+        'st1_d_unactive_en': '#005e54',
+        'st1_d_Text_primary_en': '#eceff0',
+        'st1_d_Text_secondary_en': '#bfbfbf',
+
+        //Style 2
+        //Light Mode
+
+        //Dark Mode
+        'st2_primary_eg': '#1c2630',
+        //for gradient
+        'st2_secondary_eg1': '#192026',
+        'st2_secondary_eg2': '#242d36',
+        'st2_btn1': '#263d46',
+        'st2_Text_primary_en': '#fefefe',
+        'st2_Text_secondary_en1': '#4d7787',
+        'st2_Text_secondary_en2': '#646f79',
 
 
       },
@@ -180,6 +210,11 @@ module.exports = {
       boxShadow: {
         'primary': 'inset 0 1px 0 hsl(0deg 0% 100% / 15%), 0 1px 1px rgb(17 24 39 / 8%)',
         'active': 'inset 0 4px 6px rgb(17 24 39 / 25%)',
+        'thin27': 'rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px',
+        'thin27dwn': 'rgb(0 0 0 / 12%) 0px -1px 3px, rgb(0 0 0 / 24%) 0px -1px 2px',
+        'thin28': 'rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px',
+        'strong89': 'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
+        'strong89dwn': 'rgb(0 0 0 / 40%) 0px 0px 4px, rgb(0 0 0 / 30%) 0px 0px 4px -3px, rgb(0 0 0 / 20%) 0px 3px 0px inset',
       },
       borderWidth: {
         'default' : '0.0625rem',

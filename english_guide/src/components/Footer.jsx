@@ -4,9 +4,9 @@ import { IoArrowBack } from 'react-icons/io5'
 
 const Header = () => {
     return (
-        <footer className= "p-4 bg-l_gold_default dark:bg-gold-bg-default shadow md:flex md:items-center md:justify-between md:p-6">
+        <footer className= "py-3.5 px-5 bg-[#e2e8f0] dark:bg-st2_primary_eg md:flex md:items-center md:justify-between dark:shadow-strong89dwn shadow-thin27dwn">
             {/* Return Back Button */}
-            <button className="w-36 
+            <button className="w-28
                         h-10 
                         flex 
                         items-center 
@@ -16,6 +16,8 @@ const Header = () => {
                         
                         bg-gh-bg-secondary
                         border-gh-bg-secondary
+
+                        active:bg-[#1e293b] ease-linear transition-all duration-150
                         
                         text-white
                         text-base
@@ -25,14 +27,14 @@ const Header = () => {
                         border-default 
                         border-solid 
                         dark:border-transparent 
-                        rounded-lg
+                        rounded-full
                           
                         dark:bg-gold_btn_alternative
                         dark:hover:bg-gold_btn_alternative_hover
                         dark:text-white"
             >
                 <IoArrowBack fontSize={19.5} className="mr-2" />
-                Return Back
+                Back
             </button>
         </footer>
     );

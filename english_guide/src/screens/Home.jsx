@@ -12,15 +12,15 @@ const HomeScreen = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
       {/* Body */}
-      <div className="pt-16 pb-16">
+      <div className="flex-grow dark:bg-gradient-to-t from-st2_secondary_eg1 to-st2_secondary_eg2 text-slate-900 dark:text-white ">
         <Routes>
           <Route path="/*" element={<HomeSection />} />
           <Route path="/maintenance" element={<MaintenanceScreen />} />
           <Route path="/robbery" element={<RobberyScreen />} />
           <Route path="/mails" element={<MailsScreen />} />
         </Routes>
-        <Footer />
       </div>
+      <Footer/>
     </div>
   );
 };

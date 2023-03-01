@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/images/logo_securitas.webp";
 import { IoMdSearch } from "react-icons/io";
-import Switcher from './Switcher';
+import Switcher from "./Switcher";
 import DropdownMenu from "./DropdownMenu";
 
 const Header = (props) => {
   const { searchTerm, setSearchTerm } = props;
   const [toggleSidebar, setToggleSidebar] = useState(true);
   const [language, setLanguage] = useState("english");
-  
+
   function handleClick() {
     setToggleSidebar((prevState) => !prevState);
   }
@@ -35,20 +35,25 @@ const Header = (props) => {
 
   return (
     <header>
-      <nav className="border-gray-200 px-6 lg:px-8 py-2.5 bg-l_gold_default dark:bg-gold-bg-default">
+      <nav className="border-gray-200 px-4 lg:px-6 py-3.5 bg-[#e2e8f0] dark:bg-st2_primary_eg text-slate-900  dark:text-white dark:shadow-strong89 shadow-thin27">
         <div className="flex flex-wrap justify-between items-center mx-auto">
           <div className="flex items-center">
+            {/* Securitas Direct Logo */}
             <img
               src={document.documentElement.classList === "dark" ? logo : logo}
               className="mr-3 h-6 sm:h-9"
               alt="Flowbite Logo"
             />
-            <span className="self-center text-xl font-semibold whitespace-nowrap text-slate-900  dark:text-white">
-            {language === 'english' ? 'TTCTA English Team Guide' : 'Guía equipo TTCTA Ingles'} 
-            </span>
+            <div className="flex flex-col">
+              <span className="text-sm font-light text-slate-400">TIGER TEAM</span>
+              <span className="self-center text-xl font-normal whitespace-nowrap ">
+                {language === "english" ? "English Guide" : "Guía Inglés"}
+              </span>
+            </div>
           </div>
-          <div className="flex items-center lg:order-2 lg:w-96 w-full space-x-1 space-y-2 ">
-            <DropdownMenu onLanguageChange={handleLanguageChange}/>
+          <div className="flex items-center lg:order-2 lg:w-96 w-full space-x-1 ">
+            {/* Language Toggle Button */}
+            <DropdownMenu onLanguageChange={handleLanguageChange} />
             {/* input search */}
             <div className="flex justify-start items-center w-full mr-2 px-2 rounded-md bg-l_gold_primary dark:bg-gh-bg-primary border-none outline-none focus-within:shadow-sm">
               <IoMdSearch fontSize={25} className="ml-1" />
@@ -56,9 +61,9 @@ const Header = (props) => {
                 type="text"
                 onChange={(e) => setSearchTerm(e.target.value)}
                 value={searchTerm}
-                placeholder={language === 'english' ? 'Search' : 'Buscar'} 
-                onFocus={() => navigate('/search')}
-                className='p-2 w-full bg-l_gold_primary dark:bg-gh-bg-primary outline-none'
+                placeholder={language === "english" ? "Search" : "Buscar"}
+                onFocus={() => navigate("/search")}
+                className="p-2 w-full bg-l_gold_primary dark:bg-gh-bg-primary outline-none"
               />
             </div>
             {/* Toggle dark/light button */}
@@ -104,33 +109,37 @@ const Header = (props) => {
               className="justify-between items-center w-full space-between lg:flex lg:w-auto lg:order-1"
               id="mobile-menu-2"
             >
-              <ul className="flex flex-col justify-between w-[33rem] maxdesktop:w-full mt-4 mt-4 font-medium lg:flex-row lg:space-x-6 lg:mt-0">
+              <ul className="flex flex-col justify-between w-[33rem] maxdesktop:w-full mt-4 font-medium lg:flex-row lg:space-x-4 gap-x-2 lg:mt-0 text-sm">
                 <li>
-                <Link to="/"
-                  className="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:p-0 hover:font-bold text-gray-700 dark:text-gray-300 hover:text-black  dark:hover:text-white border-gray-700"
+                  <Link
+                    to="/"
+                    className="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:p-0 font-medium text-gray-700 dark:text-[#67b1c5] hover:text-black dark:hover:text-white"
                   >
-                    {language === 'english' ? 'Home' : 'Inicio'}
+                    {language === "english" ? "HOME" : "INICIO"}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/maintenance"
-                  className="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:p-0 hover:font-bold text-gray-700 dark:text-gray-300 hover:text-black  dark:hover:text-white border-gray-700"
+                  <Link
+                    to="/maintenance"
+                    className="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:p-0 font-medium text-gray-700 dark:text-[#67b1c5] hover:text-black dark:hover:text-white"
                   >
-                    {language === 'english' ? 'Maintenances' : 'Mantenimientos'}
+                    {language === "english" ? "MAINTENANCES" : "MANTENIMIENTOS"}
                   </Link>
                 </li>
                 <li>
-                <Link to="/robbery"
-                  className="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:p-0 hover:font-bold text-gray-700 dark:text-gray-300 hover:text-black  dark:hover:text-white border-gray-700"
+                  <Link
+                    to="/robbery"
+                    className="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:p-0 font-medium text-gray-700 dark:text-[#67b1c5] hover:text-black dark:hover:text-white"
                   >
-                    {language === 'english' ? 'Robbery' : 'Robos'}
+                    {language === "english" ? "ROBBERY" : "ROBOS"}
                   </Link>
                 </li>
                 <li>
-                <Link to="/mails"
-                  className="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:p-0 hover:font-bold text-gray-700 dark:text-gray-300 hover:text-black  dark:hover:text-white border-gray-700"
+                  <Link
+                    to="/mails"
+                    className="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:p-0 font-medium text-gray-700 dark:text-[#67b1c5] hover:text-black dark:hover:text-white"
                   >
-                    {language === 'english' ? 'Mails' : 'Emails'}
+                    {language === "english" ? "MAILS" : "EMAILS"}
                   </Link>
                 </li>
               </ul>

@@ -3,7 +3,7 @@ import React from 'react';
 const MailsScreen = () => {
   return (
     <div>
-      Features
+      Mails
     </div>
   );
 }
