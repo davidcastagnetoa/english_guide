@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import HomeScreen from "./screens/HomeScreen";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import HomeScreen from "./screens/Home";
+import HomeSection from "./screens/HomeSection";
 
 const App = () => {
   // const navigate = useNavigate();
@@ -15,6 +16,8 @@ const App = () => {
   return (
     <Routes>
       <Route path="/*" element={<HomeScreen />} />
+      <Route path="/*" element={<HomeSection />} />
+
     </Routes>
   );
 };
