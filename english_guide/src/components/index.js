@@ -1,2 +1,10 @@
 export { default as Header } from "./Header";
 export { default as Footer } from "./Footer";
+export { default as BillingsBtn } from "./BillingsBtn";
+export { default as CamerasBtn } from "./CamerasBtn";
+export { default as FastBtn } from "./FastBtn";
+export { default as MoonshotBtn } from "./MoonshotBtn";
+export { default as RobberyBtn } from "./RobberyBtn";
+export { default as SupportBtn } from "./SupportBtn";
+export { default as TechnicianBtn } from "./TechnicianBtn";
+export { default as ClassicsBtn } from "./ClassicsBtn";

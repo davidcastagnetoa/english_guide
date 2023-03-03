@@ -32,7 +32,7 @@ const Header = (props) => {
 
   return (
     <header>
-      <nav className="border-gray-200 px-4 lg:px-6 py-3.5 bg-[#e2e8f0] dark:bg-st2_primary_eg text-slate-900  dark:text-white dark:shadow-strong89 shadow-thin27">
+      <nav className="border-gray-200 px-4 lg:px-6 py-3.5 bg-[#e2e8f0] dark:bg-st2_primary_eg text-slate-900 dark:text-white shadow-thin27">
         <div className="flex flex-wrap justify-between items-center mx-auto">
           <div className="flex items-center">
             {/* Securitas Direct Logo */}
@@ -42,7 +42,7 @@ const Header = (props) => {
               alt="Flowbite Logo"
             />
             <div className="flex flex-col">
-              <span className="text-sm font-light text-slate-400">TIGER TEAM</span>
+              <span className="text-sm font-light text-slate-400">CTA</span>
               <span className="self-center text-xl font-normal whitespace-nowrap ">
                 {language === "english" ? "English Guide" : "Guía Inglés"}
               </span>
