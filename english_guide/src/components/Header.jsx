@@ -32,7 +32,7 @@ const Header = (props) => {
 
   return (
     <header>
-      <nav className="border-gray-200 px-4 lg:px-6 py-3.5 bg-[#e2e8f0] dark:bg-st2_primary_eg text-slate-900 dark:text-white shadow-thin27">
+      <nav className="border-gray-200 px-4 lg:px-6 py-3.5 dark:bg-slate-900 text-slate-900 dark:text-white">
         <div className="flex flex-wrap justify-between items-center mx-auto">
           <div className="flex items-center">
             {/* Securitas Direct Logo */}
@@ -43,16 +43,16 @@ const Header = (props) => {
             />
             <div className="flex flex-col">
               <span className="text-sm font-light text-slate-400">CTA</span>
-              <span className="self-center text-xl font-normal whitespace-nowrap ">
+              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:bg-gradient-to-r bg-black dark:from-indigo-200 dark:via-sky-400 dark:to-indigo-200 bg-clip-text font-display tracking-tight text-transparent">
                 {language === "english" ? "English Guide" : "Guía Inglés"}
               </span>
             </div>
           </div>
           <div className="flex items-center lg:order-2 lg:w-96 w-full space-x-1 ">
             {/* Language Toggle Button */}
-            <DropdownMenu/>
+            <DropdownMenu />
             {/* input search */}
-            <div className="flex justify-start items-center w-full mr-2 px-2 rounded-md bg-l_gold_primary dark:bg-gh-bg-primary border-none outline-none focus-within:shadow-sm">
+            <div className="flex w-full mr-2 p-2  rounded-md items-center justify-center text-sm ring-1 ring-slate-200 hover:ring-slate-300 dark:bg-slate-800/75 dark:ring-inset dark:ring-white/5 dark:hover:bg-slate-700/40 dark:hover:ring-slate-500">
               <IoMdSearch fontSize={25} className="ml-1" />
               <input
                 type="text"
@@ -60,12 +60,13 @@ const Header = (props) => {
                 value={searchTerm}
                 placeholder={language === "english" ? "Search" : "Buscar"}
                 onFocus={() => navigate("/search")}
-                className="p-2 w-full bg-l_gold_primary dark:bg-gh-bg-primary outline-none"
+                className="ml-2 w-full dark:bg-slate-800/75 outline-none"
               />
             </div>
             {/* Toggle dark/light button */}
             <Switcher />
-            <button
+            {/* Hamburger Toggle */}
+            {/* <button
               data-collapse-toggle="mobile-menu-2"
               type="button"
               className="inline-flex items-center p-2 ml-1 text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
@@ -98,10 +99,10 @@ const Header = (props) => {
                   clipRule="evenodd"
                 ></path>
               </svg>
-            </button>
+            </button> */}
           </div>
           {/* Toggle Hambuerger Button SideBar Elements */}
-          {toggleSidebar && (
+          {/* {toggleSidebar && (
             <div
               className="justify-between items-center w-full space-between lg:flex lg:w-auto lg:order-1"
               id="mobile-menu-2"
@@ -141,7 +142,7 @@ const Header = (props) => {
                 </li>
               </ul>
             </div>
-          )}
+          )} */}
         </div>
       </nav>
     </header>

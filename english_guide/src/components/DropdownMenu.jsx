@@ -48,13 +48,13 @@ const DropdownMenu = () => {
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
       >
-        <div className="z-10 w-[6rem] bg-l_gold_default rounded divide-y divide-slate-400 shadow dark:bg-st2_btn1 dark:divide-[#9c704c5b] absolute mt-1 right-0 left-auto top-auto">
+        <div className="absolute z-10 top-full mt-3 w-fit left-1/2 -translate-x-24 space-y-1 rounded-xl divide-y divide-slate-400 bg-white p-1 text-sm font-medium shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-slate-800 dark:ring-white/5 ">
           {/* List Data */}
           <ul className="py-1 text-sm text-gray-700 dark:text-slate-400">
             <li>
               <button
                 onClick={() => changeLanguageHandler("english")}
-                className="w-full text-sm font-normal block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gh-bg-primary dark:hover:text-white"
+                className="w-full text-sm font-normal block py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gh-bg-primary dark:hover:text-white"
               >
                 English
               </button>
@@ -62,7 +62,7 @@ const DropdownMenu = () => {
             <li>
               <button
                 onClick={() => changeLanguageHandler("español")}
-                className="w-full text-sm font-normal block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gh-bg-primary dark:hover:text-white"
+                className="w-full text-sm font-normal block py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gh-bg-primary dark:hover:text-white"
               >
                 Español
               </button>

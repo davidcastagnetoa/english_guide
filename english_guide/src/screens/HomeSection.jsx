@@ -12,7 +12,7 @@ import ClassicsBtn from '../components/ClassicsBtn.jsx';
 const HomeSection = () => {
   const { language } = useContext(LanguageContext)
   return (
-    <div className='grid grid-cols-4 grid-rows-2 justify-center items-center h-[30rem] w-[60rem] gap-6 mx-auto'>
+    <div className='grid grid-cols-4 grid-rows-2 justify-center items-center h-[35rem] w-[70rem] gap-6 mx-auto'>
       <RobberyBtn />
       <CamerasBtn />
       <MoonshotBtn />

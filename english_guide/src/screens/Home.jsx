@@ -31,7 +31,7 @@ const HomeScreen = () => {
           <Route path="/billings" element={<BillingScreen />} />
           <Route path="/fast" element={<FastScreen />} />
           <Route path="/technician" element={<TechnicianScreen />} />
-          <Route path="/suport" element={<SupportScreen />} />
+          <Route path="/support" element={<SupportScreen />} />
         </Routes>
       </div>
       <Footer/>
