@@ -1,5 +1,8 @@
 #Style example
 [Style 1](https://syntax.tailwindui.com/)
+[Style 2](https://demos.creative-tim.com/argon-dashboard-pro-tailwind/pages/pages/notifications.html)
+[All Styles](https://www.creative-tim.com/design-system/soft)
+[IA images](https://app.runwayml.com/)
 
 # Getting Started with Create React App
 

@@ -9,7 +9,10 @@ const Header = () => {
   return (
     <footer className="py-3.5 px-5 md:flex md:items-center md:justify-between dark:bg-slate-900">
       {/* Return Back Button */}
-      <button className="flex items-center justify-center py-2 px-4 outline-none bg-gh-bg-secondary dark:hover:bg-sky-200 dark:active:bg-sky-500 border-gh-bg-secondary active:bg-[#1e293b] ease-linear transition-all duration-150 text-white text-base hover:bg-gh-bg-primary active:shadow-active shadow-primary border-default border-solid rounded-full dark:bg-sky-300  dark:text-slate-900 dark:border-transparent" onClick={() => window.history.back()}>
+      <button
+        className="inline-flex px-3 py-3 font-bold text-center text-white uppercase align-middle transition-all rounded-lg cursor-pointer bg-gradient-to-tl from-slate-800 to-slate-600 hover:border-slate-400 hover:bg-slate-600  leading-normal text-xs ease-in tracking-tight-rem shadow-xs bg-150 bg-x-25 hover:-translate-y-px active:opacity-85 hover:shadow-md"
+        onClick={() => window.history.back()}
+      >
         <IoArrowBack fontSize={19.5} className="mr-2" />
         {language === "english" ? "Back" : "Volver"}
       </button>

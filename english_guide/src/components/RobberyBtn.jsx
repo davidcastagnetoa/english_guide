@@ -1,52 +1,61 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { LanguageContext } from "./context/LanguageContext";
-import logoRobbery from "../assets/images/robberies_logo.png";
+import bgRobbery from "../assets/images/burglar.jpg";
+import CopyButton from "./CopyButton";
 
 const RobberyBtn = () => {
   const { language } = useContext(LanguageContext);
+  const [copied, setCopied] = useState(false);
+  // Copy Alert
+  const handleCopy = () => {
+    setCopied(true);
+    setTimeout(() => {setCopied(false);}, 2000);
+  };
   const navigate = useNavigate();
 
   return (
-    <Link
-      to="/robbery"
-      className="flex flex-col justify-between items-center w-max my-0 mx-auto"
-    >
+    <div className="flex flex-col justify-between items-center w-max my-0 mx-auto">
       <div className="relative">
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10 blur-lg"></div>
-        <div className="relative rounded-2xl bg-[#0A101F]/80 ring-1 ring-white/10 backdrop-blur px-6 py-3.5">
-          <div className="w-40 h-48 flex flex-col justify-between">
-            <div className="flex items-center flex-row justify-between">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 42 10"
-                fill="none"
-                className="h-2.5 w-auto stroke-slate-500/30"
+        {/* White Shadow */}
+        {/* <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10 blur-lg"></div> */}
+        <div className="card p-0">
+          <a href="#">
+            <img
+              class="rounded-t-lg"
+              src="/docs/images/blog/image-1.jpg"
+              alt=""
+            />
+          </a>
+          <img src={bgRobbery} alt="robbery" className="rounded-t-lg w-60" />
+          <div class="p-5 w-60">
+            <h5 class="mb-2 font-semibold text-base font-bold tracking-tight text-gray-900 dark:text-white">
+              {language === "english" ? "ROBBERY" : "ROBOS"}
+            </h5>
+            <p class="mb-3 text-xs font-normal text-gray-700 dark:text-gray-400">
+              Process, speechs, tickets and maintenances.
+            </p>
+            {/* Divider */}
+            <hr class="h-px my-4 dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent"></hr>
+            <div className="flex flex-row justify-between">
+              <Link
+                to="/robbery"
+                className="inline-flex items-center px-2 py-1 text-sm text-center text-white align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer active:-translate-y-px active:hover:text-white active:text-black hover:-translate-y-px hover:shadow-xs leading-normal tracking-tight-rem bg-150 bg-x-25 hover:text-white  bg-gradient-to-tl from-slate-800 to-slate-600 hover:border-slate-400 hover:bg-slate-600"
               >
-                <circle cx="5" cy="5" r="4.5"></circle>
-                <circle cx="21" cy="5" r="4.5"></circle>
-                <circle cx="37" cy="5" r="4.5"></circle>
-              </svg>
-              <div className="flex h-6 rounded-full text-slate-500">
-                <div className="flex items-center rounded-full text-xs">
-                  {language === "english" ? "process.data" : "procesos.data"}
-                </div>
-              </div>
+                Read more
+              </Link>
+              <CopyButton textToCopy="66065" onCopy={handleCopy} />
             </div>
-            <div className="my-3 mx-auto">
-              <img src={logoRobbery} alt="robbery" className="h-24" />
-            </div>
-            <div className="flex space-x-2 text-sm">
-              <div className="flex h-6 rounded-full bg-gradient-to-r from-sky-400/30 via-sky-400 to-sky-400/30 p-px font-medium text-sky-300">
-                <div className="flex items-center rounded-full px-2.5 bg-slate-800">
-                  {language === "english" ? "ROBBERY" : "ROBOS"}
-                </div>
-              </div>
-            </div>
+            {/* Copied Alert */}
+            {copied && (
+                <span class="fixed bottom-[3.5rem] left-[5.5rem]   bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
+                  {language === "english" ? "copied" : "copiado"}
+                </span>
+              )}
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

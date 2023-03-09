@@ -9,3 +9,25 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  border: 0;
+  opacity: .25;
+}
+
+@layer components {
+  .card {
+    background-color: theme('colors.white');
+    border: 1px solid transparent;
+    border-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;
+    -webkit-backdrop-filter: blur(20px);
+    padding: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  .dark .card {
+    background-color: #0a101fcc;
+  }
+}

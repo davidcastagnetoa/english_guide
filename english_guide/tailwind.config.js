@@ -86,6 +86,8 @@ module.exports = {
         620: "620px",
       },
       colors: {
+        'darkCard': '#0a101fcc',
+
         'sd-moon': '#05070A',
         'sd-moon-from': '#005c793d',
         'sd-moon-to': '#1a00283d',
