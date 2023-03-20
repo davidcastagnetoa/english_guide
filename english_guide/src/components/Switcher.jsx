@@ -15,7 +15,7 @@ export default function Switcher() {
 
   return (
     <>
-      <div className="w-10 h-10 text-gray-500 hover:text-gray-100 border-transparent border font-medium rounded-full dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 p-2">
+      <div className="w-10 h-10 m-1 text-gray-500 hover:text-gray-100 border-transparent border font-medium rounded-full dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 p-2">
         <DarkModeSwitch
           checked={darkSide}
           onChange={toogleDarkMode}

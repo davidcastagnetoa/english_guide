@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Route, Routes } from "react-router-dom";
@@ -13,15 +13,22 @@ import BillingScreen from "./BillingScreen.jsx";
 import FastScreen from "./FastScreen.jsx";
 import TechnicianScreen from "./TechnicianScreen.jsx";
 import SupportScreen from "./SupportScreen.jsx";
+import CopiedAlert from "../components/CopiedAlert";
 
 const HomeScreen = () => {
+  const [showCopiedAlert, setShowCopiedAlert] = useState(false);
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
+      {/* Copied Alert */}
+      {showCopiedAlert && <CopiedAlert />}
       {/* Body */}
-      <div className="flex flex-grow items-center dark:bg-gradient-to-t from-slate-900 to-slate-900 text-slate-500 dark:text-white ">
+      <div className="flex flex-grow flex-col justify-center items-center dark:bg-gradient-to-t from-black to-black text-slate-500 dark:text-white ">
         <Routes>
-          <Route path="/*" element={<HomeSection />} />
+          <Route
+            path="/*"
+            element={<HomeSection setShowCopiedAlert={setShowCopiedAlert} />}
+          />
           <Route path="/maintenance" element={<MaintenanceScreen />} />
           <Route path="/mails" element={<MailsScreen />} />
           <Route path="/robbery" element={<RobberyScreen />} />
@@ -34,7 +41,7 @@ const HomeScreen = () => {
           <Route path="/support" element={<SupportScreen />} />
         </Routes>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

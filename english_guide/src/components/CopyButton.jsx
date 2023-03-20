@@ -18,10 +18,10 @@ function CopyButton({ textToCopy, onCopy }) {
     <div>
       <button
         onClick={handleClick}
-        class="flex items-center bg-transparent px-2 py-1 border border-solid shadow-none rounded-lg dark:border-slate-700 border-slate-300 bg-clip-border  ease-in-out group text-slate-500 "
+        className="flex items-center bg-transparent px-2 py-1 border border-solid shadow-none rounded-lg dark:border-slate-700 border-slate-300 bg-clip-border  ease-in-out group text-slate-500 "
       >
         <IoMdCopy />
-        <span class="ml-1 text-xs leading-normal">
+        <span className="ml-1 text-xs leading-normal">
           {language === "english" ? "EXT: 66486" : "EXT: 66173"}
         </span>
       </button>

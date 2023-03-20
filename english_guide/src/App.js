@@ -3,7 +3,6 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import HomeScreen from "./screens/Home";
 import HomeSection from "./screens/HomeSection";
 import Login from "./screens/Login";
-
 import { LanguageProvider } from "./components/context/LanguageContext";
 import { useEffect } from "react";
 
@@ -11,10 +10,13 @@ const App = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const user = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
-    console.log(user)
+    const user =
+      localStorage.getItem("user") !== "undefined"
+        ? JSON.parse(localStorage.getItem("user"))
+        : localStorage.clear();
+    console.log(user);
     // user or admin page route
-    if(user !== 'userAdmin') navigate('/login');
+    if (user !== "userAdmin") navigate("/login");
   }, []);
 
   return (

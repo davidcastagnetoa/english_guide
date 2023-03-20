@@ -32,7 +32,7 @@ const Header = (props) => {
 
   return (
     <header>
-      <nav className="border-gray-200 px-4 lg:px-6 py-3.5 dark:bg-slate-900 text-slate-900 dark:text-white">
+      <nav className="border-gray-200 px-4 lg:px-6 py-3.5 dark:bg-black text-slate-900 dark:text-white">
         <div className="flex flex-wrap justify-between items-center mx-auto">
           <div className="flex items-center">
             {/* Securitas Direct Logo */}
@@ -52,7 +52,7 @@ const Header = (props) => {
             {/* Language Toggle Button */}
             <DropdownMenu />
             {/* input search */}
-            <div className="flex w-full mr-2 p-2  rounded-md items-center justify-center text-sm ring-1 ring-slate-200 hover:ring-slate-300 dark:bg-slate-800/75 dark:ring-inset dark:ring-white/5 dark:hover:bg-slate-700/40 dark:hover:ring-slate-500">
+            <div className="flex w-full mr-2 p-2  rounded-md items-center justify-center text-sm ring-1 ring-slate-200 hover:ring-slate-300 dark:bg-zinc-800 dark:ring-inset dark:ring-white/5 dark:hover:bg-zinc-800 dark:hover:ring-zinc-500">
               <IoMdSearch fontSize={25} className="ml-1" />
               <input
                 type="text"
@@ -60,7 +60,7 @@ const Header = (props) => {
                 value={searchTerm}
                 placeholder={language === "english" ? "Search" : "Buscar"}
                 onFocus={() => navigate("/search")}
-                className="ml-2 w-full dark:bg-slate-800/75 outline-none"
+                className="ml-2 w-full dark:bg-zinc-800 outline-none"
               />
             </div>
             {/* Toggle dark/light button */}

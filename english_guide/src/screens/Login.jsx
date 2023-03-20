@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Alert from "../components/Alert";
 import { LanguageContext } from "../components/context/LanguageContext";
 import Switcher from "../components/Switcher";
@@ -10,15 +10,14 @@ const Login = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault(); // Evitar comportamiento predeterminado del formulario
-    // Verificar las credenciales
+    // Verify credencials
     if (username === "TIRIRI" && password === "rocilito") {
-      // Almacenar las credenciales en localStorage si se ha seleccionado "Recordar usuario y contraseña"
+      // Store the credencials in localStorage if "remember me" toogle is activated
       if (rememberMe) {
         localStorage.setItem("TIRIRI", username);
         localStorage.setItem("rocilito", password);
@@ -26,7 +25,7 @@ const Login = () => {
       } else {
         localStorage.clear();
       }
-      // Redirigir al usuario a la página principal
+      // Redirect the user to the home page
       navigate("/");
     } else {
       localStorage.clear();
@@ -42,7 +41,7 @@ const Login = () => {
     setRememberMe(e.target.checked);
   };
 
-  // Recuperar las credenciales almacenadas en localStorage si se ha seleccionado "Recordar usuario y contraseña"
+  // Retrieve credentials stored in localStorage if "Remember me" is selected
   useEffect(() => {
     const storedUsername = localStorage.getItem("TIRIRI");
     const storedPassword = localStorage.getItem("rocilito");
@@ -55,23 +54,24 @@ const Login = () => {
   }, []);
 
   return (
-    <main className="dark:bg-slate-900 bg-gray-50 text-slate-900 dark:text-white h-screen flex flex-col justify-center">
+    <main className="dark:bg-black bg-gray-50 text-slate-900 dark:text-white h-screen flex flex-col justify-center">
       {showAlert && <Alert showAlert={showAlert} onClose={closeAlert} />}
       <div className="flex flex-wrap justify-center ">
         <div className="px-6 mx-auto flex-0">
           {/* Card with Shadow */}
           <div className="relative">
-            {/* White Shadow */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10 blur-lg"></div>
+            {/* Blur Effect */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10"></div>
             {/* Login Card */}
-            <div className="relative z-0 flex flex-col justify-between w-[23rem] h-[30rem] min-w-0 break-words card ">
+            <div className="relative z-0 flex flex-col justify-between w-[23rem] h-[30rem] min-w-0 break-words login_card">
+              {/* Dark/night toggle button */}
               <Switcher />
-              <div className="text-center border-black/12.5 rounded-t-2xl border-b-0 border-solid p-6    ">
+              <div className="text-center border-black/12.5 rounded-t-2xl border-b-0 border-solid p-6">
                 <span className="self-center text-3xl font-semibold whitespace-nowrap dark:bg-gradient-to-r bg-black dark:from-indigo-200 dark:via-sky-400 dark:to-indigo-200 bg-clip-text font-display tracking-tight text-transparent">
                   {language === "english" ? "English Guide" : "Guía Inglés"}
                 </span>
               </div>
-              <div className="p-8 pt-0 pb-6 text-center">
+              <div className="p-8 pb-6 text-center rounded-b-2xl">
                 <div className="text-center text-slate-500 mb-1">
                   <small>
                     {language === "english"
@@ -80,12 +80,12 @@ const Login = () => {
                   </small>
                 </div>
                 {/* Login Form */}
-                <form role="form text-left" onSubmit={handleLogin}>
+                <form onSubmit={handleLogin}>
                   <div className="mb-4">
                     {/* username input */}
                     <input
                       type="text"
-                      className="text-sm focus:shadow-primary-outline placeholder:text-gray-500 dark:placeholder:text-white/80 dark:text-white/80 leading-5.6 ease block w-full appearance-none rounded-lg bg-white bg-clip-padding py-2.5 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow     items-center justify-center ring-1 ring-slate-200 hover:ring-slate-300 dark:bg-slate-800/75 dark:ring-inset dark:ring-white/5 dark:hover:bg-slate-700/40 dark:hover:ring-slate-500"
+                      className="text-sm focus:shadow-primary-outline placeholder:text-gray-500 dark:placeholder:text-white/80 dark:text-white/80 leading-5.6 ease block w-full appearance-none rounded-lg bg-white bg-clip-padding py-2.5 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow     items-center justify-center ring-1 ring-zinc-200 hover:ring-zinc-300 dark:bg-zinc-800 dark:ring-inset dark:ring-white/5 dark:hover:bg-zinc-700 dark:hover:ring-zinc-500"
                       placeholder={
                         language === "english"
                           ? "Username"
@@ -99,7 +99,7 @@ const Login = () => {
                     {/* password input */}
                     <input
                       type="password"
-                      className="text-sm focus:shadow-primary-outline placeholder:text-gray-500 dark:placeholder:text-white/80 dark:text-white/80 leading-5.6 ease block w-full appearance-none rounded-lg bg-white bg-clip-padding py-2.5 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow     items-center justify-center ring-1 ring-slate-200 hover:ring-slate-300 dark:bg-slate-800/75 dark:ring-inset dark:ring-white/5 dark:hover:bg-slate-700/40 dark:hover:ring-slate-500"
+                      className="text-sm focus:shadow-primary-outline placeholder:text-gray-500 dark:placeholder:text-white/80 dark:text-white/80 leading-5.6 ease block w-full appearance-none rounded-lg bg-white bg-clip-padding py-2.5 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow     items-center justify-center ring-1 ring-zinc-200 hover:ring-zinc-300 dark:bg-zinc-800/75 dark:ring-inset dark:ring-white/5 dark:hover:bg-zinc-700/40 dark:hover:ring-zinc-500"
                       placeholder={
                         language === "english" ? "Password" : "Contraseña"
                       }

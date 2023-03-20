@@ -8,4 +8,4 @@ const LanguageContext = React.createContext({
   changeLanguage: () => {},
 });
 
-export default LanguageContext;
+export { LanguageContext };
