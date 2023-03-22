@@ -40,6 +40,9 @@ module.exports = {
       // => @media (max-width: 1535px) { ... }
     },
     extend: {
+      fontFamily: {
+        'titillium': ['Titillium Web', 'sans-serif']
+      },
       margin: {
         320: "320px",
       },
@@ -191,8 +194,6 @@ module.exports = {
         'st2_Text_primary_en': '#fefefe',
         'st2_Text_secondary_en1': '#4d7787',
         'st2_Text_secondary_en2': '#646f79',
-
-
       },
       // backgroundImage: {
       //   'hero-pattern': "url('./assets/box.svg')"
