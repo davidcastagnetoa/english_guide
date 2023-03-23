@@ -32,7 +32,7 @@ const Header = (props) => {
 
   return (
     <header>
-      <nav className="font-titillium border-gray-200 px-4 lg:px-6 py-3.5 dark:bg-black text-slate-900 dark:text-white">
+      <nav className="font-titillium border-gray-200 px-4 lg:px-6 py-2.5 4xl:py-3.5 dark:bg-black text-slate-900 dark:text-white">
         <div className="flex flex-wrap justify-between items-center mx-auto">
           <div className="flex items-center">
             {/* Securitas Direct Logo */}

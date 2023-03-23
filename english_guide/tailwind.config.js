@@ -25,6 +25,10 @@ module.exports = {
       // => @media (min-width: 1280px) { ... }
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
+      '3xl': '1600px',
+      // => @media (min-width: 1600px) { ... }
+      '4xl': '1920px',
+      // => @media (min-width: 1920px) { ... }
       //Max Width
       'maxandroid': {'max': '418px'},
       // => @media (max-width: 639px) { ... }

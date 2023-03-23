@@ -9,17 +9,14 @@ const HomeSection = ({ setShowCopiedAlert }) => {
 
   return (
     <>
-      <div className="grid grid-cols-4 grid-rows-2 justify-center items-center h-[44rem] w-[70rem] gap-6 mx-auto">
+      <div className="grid grid-cols-4 grid-rows-2 justify-center items-center h-auto w-[70rem] gap-6 4xl:gap-8 mt-5 4x:mt-0 mx-auto">
         {pages.map((page, index) => (
           <div
             key={index}
             className="flex flex-col justify-between items-center w-max my-0 mx-auto"
           >
-            <div className="relative">
-              {/* White Shadow */}
-              {/* <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10 blur-lg"></div> */}
               {/* Card */}
-              <div className="card p-0 h-[20rem]">
+              <div className="card p-0 h-[19rem]">
                 {/* Image Logo */}
                 <Link to={page.to}>
                   <img
@@ -28,15 +25,15 @@ const HomeSection = ({ setShowCopiedAlert }) => {
                     className="rounded-t-lg w-60 h-auto object-cover"
                   />
                 </Link>
-                <div className="p-5 w-60 flex flex-col justify-between h-[11.5rem]">
-                  <h5 className="mb-2 font-semibold text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                <div className="p-5 w-60 flex flex-col justify-between h-[10.5rem]">
+                  <h5 className="mb-1 font-semibold text-base font-bold tracking-tight text-gray-900 dark:text-white">
                     {page.title[language]}
                   </h5>
-                  <p className="mb-3 text-xs font-normal text-gray-700 dark:text-gray-400">
+                  <p className="mb-1 text-xs font-normal text-gray-700 dark:text-gray-400">
                     {page.description[language]}
                   </p>
                   {/* Divider */}
-                  <hr className="h-px my-4 dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent"></hr>
+                  <hr className="h-px my-3 dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent"></hr>
                   {/* Access Button */}
                   <div className="flex flex-row justify-between">
                     <Link
@@ -63,7 +60,6 @@ const HomeSection = ({ setShowCopiedAlert }) => {
                   </div>
                 </div>
               </div>
-            </div>
           </div>
         ))}
       </div>

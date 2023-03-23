@@ -6,7 +6,7 @@ const CopiedAlert = () => {
 
   return (
     <>
-        <span className="absolute top-20 text-center tracking-wider bg-green-100 text-green-800 w-full text-xs font-medium mr-2 px-2.5 py-0.5 dark:bg-green-900 dark:text-green-300">
+        <span className="absolute top-[72px] 4xl:top-20 text-center tracking-wider bg-green-200 text-green-800 w-full text-xs font-bold mr-2 px-2.5 py-0.5 dark:bg-green-900 dark:text-green-300">
           {language === "english" ? "COPIED!" : "COPIADO!"}
         </span>
     </>

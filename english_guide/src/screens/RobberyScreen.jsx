@@ -17,7 +17,7 @@ const RobberyScreen = () => {
           </h4>
           {/* Buttons */}
           <div className="divide-y divide-[#00000030] dark:divide-[#333] text-sm font-light tracking-wider">
-            <div className="w-full flex flex-row items-center cursor-pointer border-t border-[#00000030] dark:border-[#333]">
+            <div className="hover:bg-[#8181812e] hover:transform hover:scale-106 w-full flex flex-row items-center cursor-pointer border-t border-[#00000030] dark:border-[#333]">
               <MdArrowForwardIos />
               <div className="w-full flex flex-row justify-start">
                 <h4 className="ml-3 mr-1 my-4">
@@ -27,7 +27,7 @@ const RobberyScreen = () => {
                 </h4>
               </div>
             </div>
-            <div className="w-full flex flex-row items-center cursor-pointer">
+            <div className="hover:bg-[#8181812e] hover:transform hover:scale-106 w-full flex flex-row items-center cursor-pointer">
               <MdArrowForwardIos />
               <div className="w-full flex flex-row justify-start">
                 <h4 className="ml-3 mr-1 my-4">
@@ -37,7 +37,7 @@ const RobberyScreen = () => {
                 </h4>
               </div>
             </div>
-            <div className="w-full flex flex-row items-center cursor-pointer">
+            <div className="hover:bg-[#8181812e] hover:transform hover:scale-106 w-full flex flex-row items-center cursor-pointer">
               <MdArrowForwardIos />
               <div className="w-full flex flex-row justify-start">
                 <h4 className="ml-3 mr-1 my-4">
@@ -47,7 +47,7 @@ const RobberyScreen = () => {
                 </h4>
               </div>
             </div>
-            <div className="w-full flex flex-row items-center cursor-pointer border-b border-[#00000030] dark:border-[#333]">
+            <div className="hover:bg-[#8181812e] hover:transform hover:scale-106 w-full flex flex-row items-center cursor-pointer border-b border-[#00000030] dark:border-[#333]">
               <MdArrowForwardIos />
               <div className="w-full flex flex-row justify-start">
                 <h4 className="ml-3 mr-1 my-4">
@@ -61,24 +61,25 @@ const RobberyScreen = () => {
         </div>
       </div>
       {/* Right Side */}
+      {/* Robbery Advices */}
       <div className="items-center flex flex-col h-full w-full">
         {/* "What to say" card */}
         <div className="flex flex-col w-max">
           {/* top div */}
           <div className="inner_card bg-[#f6f8fa] dark:border-[#333] py-2 border-[1px] border-b-0 rounded-t-lg flex flex-col justify-center items-center">
             {/* Title */}
-            <span className="text-4xl font-extrabold text-black dark:text-white">
+            <span className="text-2xl 4xl:text-4xl font-extrabold text-black dark:text-white">
               {language === "english" ? "Robbery" : "Robos"}
             </span>
             {/* Subtitle */}
-            <p className="mt-2 text-sm font-extralight text-black dark:text-white">
+            <p className="mt-0 4xl:mt-2 text-sm font-extralight text-black dark:text-white">
               {language === "english" ? "Procedures" : "Procedimientos"}
             </p>
           </div>
           {/* bottom div */}
           <div className="inner_card dark:bg-black dark:border-[#333] py-2 rounded-b-lg flex flex-col justify-center items-center">
             {/* title form wrapper */}
-            <div className="w-full flex flex-row items-center justify-around mt-2.5">
+            <div className="w-full flex flex-row items-center justify-around mt-0 4xl:mt-2.5 ">
               <div className="flex flex-row items-center justify-center">
                 <BsCheckCircleFill className="text-2xl text-green-600 dark:text-green-500" />
                 <h2 className="ml-2 text-md text-black dark:text-white">
@@ -93,10 +94,10 @@ const RobberyScreen = () => {
               </div>
             </div>
             {/* div form wrapper */}
-            <div className="mt-2 flex flex-row items-center justify-between font-titillium text-base font-light text-neutral-600 dark:text-neutral-400">
+            <div className="mt-2 flex flex-row items-center justify-between font-titillium text-[500] font-light text-neutral-600 dark:text-neutral-400">
               {/* What to say wrapper */}
-              <div className="h-full flex flex-col items-center justify-center basis-1/2 h-48">
-                <ul className="flex flex-col gap-1 justify-between items-center">
+              <div className="h-full flex flex-col items-center justify-center basis-1/2">
+                <ul className="dark:text-[#00b900] text-[#006000] flex flex-col gap-0 4xl:gap-1 justify-between items-center">
                   <li>
                     {language === "english"
                       ? "Intrussion signals"
@@ -135,8 +136,8 @@ const RobberyScreen = () => {
                 </ul>
               </div>
               {/* What to NOT say wrapper */}
-              <div className="flex flex-col items-center justify-center basis-1/2 h-48">
-                <ul className="flex flex-col gap-1 justify-between items-center text-center">
+              <div className="h-full flex flex-col items-center justify-center basis-1/2">
+                <ul className="dark:text-[#ff2e2e] text-[#870000] flex flex-col gap-0 4xl:gap-1 justify-between items-center text-center">
                   <li>
                     {language === "english"
                       ? "Missing Test"
@@ -171,6 +172,17 @@ const RobberyScreen = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      {/* Maintenance Cards */}
+      <div className="items-center flex flex-col h-full w-full">
+        {/* top div */}
+        <div className="inner_card bg-[#f6f8fa] dark:border-[#333] py-2 border-[1px] border-b-0 rounded-t-lg flex flex-col justify-center items-center">
+          {language === "english" ? "Open maintenances/ticket 500/" : "Abre el mantenimiento/aviso 500/"}
+        </div>
+        {/* bottom div */}
+        <div className="inner_card dark:bg-black dark:border-[#333] py-2 rounded-b-lg flex flex-col justify-center items-center">
+          
         </div>
       </div>
     </div>
