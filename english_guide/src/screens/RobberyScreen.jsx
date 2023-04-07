@@ -139,7 +139,7 @@ const RobberyScreen = () => {
             {maintenances[0].encoding.map((item, index) => (
               <button
                 key={index}
-                className="w-[220px] dark:active:text-[#00d0ff] active:text-[#0072d3] active:font-bold hover:bg-[#8181812e] hover:transform hover:scale-106 w-[210px] flex flex-row items-center cursor-pointer border-t border-[#00000030] dark:border-[#333]"
+                className="w-[220px] dark:active:text-[#00d0ff] active:text-[#0072d3] active:font-bold hover:bg-[#8181812e] hover:transform hover:scale-106 flex flex-row items-center cursor-pointer border-t border-[#00000030] dark:border-[#333]"
                 onClick={() => handleClick(index)}
               >
                 <MdArrowForwardIos />
@@ -167,7 +167,7 @@ const RobberyScreen = () => {
               <span className="font-semibold text-xl 4xl:text-2xl text-black dark:text-white pb-4">
                 {language === "english" ? "Questions" : "Preguntas"}
               </span>
-              <span>{questions[currentQuestionIndex]}</span>
+              <span>{language === "english" ? questions[currentQuestionIndex].english : questions[currentQuestionIndex].español}</span>
             </div>
             <button
               className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white bg-black text-white hover:bg-white hover:text-black font-bold text-center uppercase align-middle cursor-pointer leading-normal text-sm transition-all inner_card px-4 h-full border-[1px] border-l-0 rounded-r-lg dark:border-[#333]"
@@ -180,7 +180,7 @@ const RobberyScreen = () => {
         </div>
         <div className="flex 4xl:flex-row flex-col ml-2.5">
           {/* Maintenance Cards */}
-          <div className="items-center flex flex-col h-full w-full justify-center">
+          <div className="items-center flex flex-col h-full w-full 4xl:justify-center justify-start">
             <div className="h-max flex flex-col w-max">
               <div className="items-center flex flex-col h-full w-full justify-center">
                 {/* top div */}
@@ -197,7 +197,7 @@ const RobberyScreen = () => {
                   </p>
                 </div>
                 {/* bottom div */}
-                <div className="h-[280px] inner_card dark:bg-black dark:border-[#333] p-2 rounded-b-lg flex flex-col justify-between items-center w-[36rem]">
+                <div className="h-[260px] inner_card dark:bg-black dark:border-[#333] p-2 rounded-b-lg flex flex-col justify-between items-center w-[36rem]">
                   {/* Subtitle */}
                   <div className="justify-between flex flex-row m-2 px-3 w-full items-center">
                     {language === "english"
@@ -216,9 +216,11 @@ const RobberyScreen = () => {
                       </div>
                     </div>
                   </div>
+                  {/* Maintenance Text */}
                   <p className="dark:text-[#7e7e7e] text-[#606060] text-[0.85rem] m-2 p-3 border-dashed border border-[#30363d] rounded-md">
                     {selectedMaintenance && selectedMaintenance.text}
                   </p>
+                  <p className="text-xs">{language === "english" ? "Press the button to copy" : "Pulsa para copiar el texto"}</p>
                   {/* Button */}
                   <div>
                     <ReactCanvasConfetti
@@ -242,7 +244,7 @@ const RobberyScreen = () => {
             </div>
           </div>
           {/* Robbery Advices */}
-          <div className="items-center flex flex-col h-full w-full justify-center">
+          <div className="items-center flex flex-col h-full w-full 4xl:justify-center justify-end">
             {/* "What to say" card */}
             <div className="h-max flex flex-col w-max">
               {/* top div */}
@@ -259,7 +261,7 @@ const RobberyScreen = () => {
                 </p>
               </div>
               {/* bottom div */}
-              <div className="h-[280px] w-[36rem] inner_card dark:bg-black dark:border-[#333] p-2 rounded-b-lg flex flex-col justify-center items-center">
+              <div className="h-[260px] w-[36rem] inner_card dark:bg-black dark:border-[#333] p-2 rounded-b-lg flex flex-col justify-center items-center">
                 {/* title form wrapper */}
                 <div className="w-full flex flex-row items-center justify-around mt-0 4xl:mt-2.5 ">
                   <div className="flex flex-row items-center justify-center">
