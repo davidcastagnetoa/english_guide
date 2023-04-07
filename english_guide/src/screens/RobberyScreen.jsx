@@ -163,7 +163,7 @@ const RobberyScreen = () => {
               <RiArrowLeftSFill/>
               Prev
             </button>
-            <div className="inner_card dark:bg-black question h-full w-[670px] p-2 flex flex-col items-center justify-center border-[1px] dark:border-[#333]">
+            <div className="inner_card dark:bg-black question h-full w-[800px] maxteams:w-[450px] p-2 flex flex-col items-center justify-center border-[1px] dark:border-[#333] text-center">
               <span className="font-semibold text-xl 4xl:text-2xl text-black dark:text-white pb-4">
                 {language === "english" ? "Questions" : "Preguntas"}
               </span>
@@ -197,7 +197,7 @@ const RobberyScreen = () => {
                   </p>
                 </div>
                 {/* bottom div */}
-                <div className="h-[260px] inner_card dark:bg-black dark:border-[#333] p-2 rounded-b-lg flex flex-col justify-between items-center w-[36rem]">
+                <div className="h-[285px] inner_card dark:bg-black dark:border-[#333] p-2 rounded-b-lg flex flex-col justify-between items-center w-[36rem]">
                   {/* Subtitle */}
                   <div className="justify-between flex flex-row m-2 px-3 w-full items-center">
                     {language === "english"
@@ -261,7 +261,7 @@ const RobberyScreen = () => {
                 </p>
               </div>
               {/* bottom div */}
-              <div className="h-[260px] w-[36rem] inner_card dark:bg-black dark:border-[#333] p-2 rounded-b-lg flex flex-col justify-center items-center">
+              <div className="h-[285px] w-[36rem] inner_card dark:bg-black dark:border-[#333] p-2 rounded-b-lg flex flex-col justify-center items-center">
                 {/* title form wrapper */}
                 <div className="w-full flex flex-row items-center justify-around mt-0 4xl:mt-2.5 ">
                   <div className="flex flex-row items-center justify-center">

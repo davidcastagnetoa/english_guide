@@ -29,6 +29,8 @@ module.exports = {
       // => @media (min-width: 1600px) { ... }
       '4xl': '1920px',
       // => @media (min-width: 1920px) { ... }
+      'teams': '1491px',
+      // => @media (min-width: 1491px) { ... }
       //Max Width
       'maxandroid': {'max': '418px'},
       // => @media (max-width: 639px) { ... }
@@ -42,6 +44,8 @@ module.exports = {
       // => @media (max-width: 1279px) { ... }
       'max2xl': {'max': '1535px'},
       // => @media (max-width: 1535px) { ... }
+      'maxteams': {'max': '1491px'},
+      // => @media (min-width: 1491px) { ... }
     },
     extend: {
       fontFamily: {
@@ -74,6 +78,7 @@ module.exports = {
         685: "685px",
         800: "800px",
         "90vh": "90vh",
+        'fill_available': "-webkit-fill-available",
       },
       flex: {
         0.7: "0.7 1 0%",
