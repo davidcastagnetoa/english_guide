@@ -136,7 +136,7 @@ const RobberyScreen = () => {
   return (
     <div className="w-full flex flex-row h-full font-titillium">
       {/* Left Side Options banner */}
-      <div className="hscreen font-titillium">
+      <div className="hscreen font-titillium z-10">
         <div className="rounded-md dark:bg-black py-0 px-2 flex flex-col w-max h-full items-center text-black dark:text-white justify-center mr-3">
           <h4 className="my-6 font-bold">
             {language === "english"
@@ -297,28 +297,30 @@ const RobberyScreen = () => {
                   <p className="dark:text-[#7e7e7e] text-[#606060] text-[0.85rem] m-2 p-3 border-dashed border border-[#30363d] rounded-md">
                     {selectedMaintenance && selectedMaintenance.text}
                   </p>
-                  <p className="text-xs">
-                    {language === "english"
-                      ? "Press the button to copy"
-                      : "Pulsa para copiar el texto"}
-                  </p>
-                  {/* Button */}
-                  <div>
-                    <ReactCanvasConfetti
-                      refConfetti={getInstance}
-                      style={canvasStyles}
-                    />
-                    <button
-                      onClick={() => {
-                        fire();
-                        handleCopyClick();
-                      }}
-                      id="copyBtn"
-                      className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white dark:hover:border-[#ffffff73] bg-black text-white hover:bg-white hover:text-black hover:border-black border inline-flex font-bold text-center uppercase align-middle px-4 py-2 rounded-lg cursor-pointer leading-normal text-sm transition-all"
-                    >
-                      <TbCopy className="text-lg" />
-                      {language === "english" ? "Copy" : "Copiar"}
-                    </button>
+                  <div className="flex flex-col items-center">
+                    <p className="text-xs">
+                      {language === "english"
+                        ? "Press the button to copy"
+                        : "Pulsa para copiar el texto"}
+                    </p>
+                    {/* Button */}
+                    <div>
+                      <ReactCanvasConfetti
+                        refConfetti={getInstance}
+                        style={canvasStyles}
+                      />
+                      <button
+                        onClick={() => {
+                          fire();
+                          handleCopyClick();
+                        }}
+                        id="copyBtn"
+                        className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white dark:hover:border-[#ffffff73] bg-black text-white hover:bg-white hover:text-black hover:border-black border inline-flex font-bold text-center uppercase align-middle px-4 py-2 rounded-lg cursor-pointer leading-normal text-sm transition-all"
+                      >
+                        <TbCopy className="text-lg" />
+                        {language === "english" ? "Copy" : "Copiar"}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

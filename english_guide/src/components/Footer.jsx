@@ -54,7 +54,7 @@ const Footer = () => {
       >
         <Link
           to="/"
-          className="search-input dark:hover:bg-transparent hover:bg-transparent dark:text-white dark:hover:text-white text-black hover:text-white inline-flex px-3 py-3 font-bold text-center uppercase align-middle rounded-lg cursor-pointer leading-normal text-xs transition-all"
+          className="search-input dark:hover:bg-transparent bg-transparent text-white hover:bg-transparent dark:text-white dark:hover:text-white hover:text-white inline-flex px-3 py-3 font-bold text-center uppercase align-middle rounded-lg cursor-pointer leading-normal text-xs transition-all"
         >
           <IoHome fontSize={16} className="mr-2" />
           {language === "english" ? "Home" : "Inicio"}

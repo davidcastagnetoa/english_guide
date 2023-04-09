@@ -22,21 +22,21 @@ const RobberyBtn = () => {
         <div className="card p-0">
           <a href="#">
             <img
-              class="rounded-t-lg"
+              className="rounded-t-lg"
               src="/docs/images/blog/image-1.jpg"
               alt=""
             />
           </a>
           <img src={bgRobbery} alt="robbery" className="rounded-t-lg w-60" />
-          <div class="p-5 w-60">
-            <h5 class="mb-2 font-semibold text-base font-bold tracking-tight text-gray-900 dark:text-white">
+          <div className="p-5 w-60">
+            <h5 className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
               {language === "english" ? "ROBBERY" : "ROBOS"}
             </h5>
-            <p class="mb-3 text-xs font-normal text-gray-700 dark:text-gray-400">
+            <p className="mb-3 text-xs font-normal text-gray-700 dark:text-gray-400">
               Process, speechs, tickets and maintenances.
             </p>
             {/* Divider */}
-            <hr class="h-px my-4 dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent"></hr>
+            <hr className="h-px my-4 dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent"></hr>
             <div className="flex flex-row justify-between">
               <Link
                 to="/robbery"
@@ -48,7 +48,7 @@ const RobberyBtn = () => {
             </div>
             {/* Copied Alert */}
             {copied && (
-                <span class="fixed bottom-[3.5rem] left-[5.5rem]   bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
+                <span className="fixed bottom-[3.5rem] left-[5.5rem]   bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
                   {language === "english" ? "copied" : "copiado"}
                 </span>
               )}

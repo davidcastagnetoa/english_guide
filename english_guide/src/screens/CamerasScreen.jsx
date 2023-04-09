@@ -38,7 +38,7 @@ const CamerasScreen = () => {
   return (
     <div className="w-full flex flex-row h-full font-titillium">
       {/* Left Side Options banner */}
-      <div className="hscreen font-titillium">
+      <div className="hscreen font-titillium z-10">
         <div className="pt-[3rem] rounded-md dark:bg-black py-0 px-2 flex flex-col w-max h-full items-center text-black dark:text-white justify-start mr-3">
           <h4 className="my-6 font-bold">
             {language === "english"
