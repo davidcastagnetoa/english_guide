@@ -9,10 +9,17 @@ import { maintenances } from "../constants/maintenances";
 
 const RobberyScreen = () => {
   const { language } = useContext(LanguageContext);
+  //Gathering data from maintenances using context
+  // Find in the object the array which has 'title' in  "english"
+  const maintenance = maintenances.find(
+    (m) => m.title.english === "Burglared Maintenances"
+  );
+  // Find in the object the array 'encoding' which has 'reason' in  "english"
+  // const reason = maintenance.encoding.find((e) => e.reason.english);
+
   const [selectedMaintenance, setSelectedMaintenance] = useState(
     maintenances[0].encoding.find((item) => item.subtype === "501")
   );
-
   const handleClick = (key) => {
     setSelectedMaintenance(maintenances[0].encoding[key]);
   };
@@ -32,13 +39,10 @@ const RobberyScreen = () => {
     left: 0,
     zIndex: -10,
   };
-
   const refAnimationInstance = useRef(null);
-
   const getInstance = useCallback((instance) => {
     refAnimationInstance.current = instance;
   }, []);
-
   const makeShot = useCallback((particleRatio, opts) => {
     refAnimationInstance.current &&
       refAnimationInstance.current({
@@ -47,7 +51,6 @@ const RobberyScreen = () => {
         particleCount: Math.floor(280 * particleRatio),
       });
   }, []);
-
   const fire = useCallback(() => {
     makeShot(0.25, {
       spread: 26,
@@ -121,11 +124,9 @@ const RobberyScreen = () => {
     },
   ];
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
   const handleNextClick = () => {
     setCurrentQuestionIndex((currentQuestionIndex + 1) % questions.length);
   };
-
   const handlePrevClick = () => {
     setCurrentQuestionIndex(
       (currentQuestionIndex - 1 + questions.length) % questions.length
@@ -139,8 +140,8 @@ const RobberyScreen = () => {
         <div className="rounded-md dark:bg-black py-0 px-2 flex flex-col w-max h-full items-center text-black dark:text-white justify-center mr-3">
           <h4 className="my-6 font-bold">
             {language === "english"
-              ? maintenances.title.english
-              : maintenances.title.español}
+              ? maintenance.title.english
+              : maintenance.title.español}
           </h4>
           {/* Buttons */}
           <div className="divide-y divide-[#00000030] dark:divide-[#333] text-sm 4xl:text-base font-light tracking-wider ">

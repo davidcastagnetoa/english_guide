@@ -45,7 +45,7 @@ const Footer = () => {
   }, [gradients]);
 
   return (
-    <footer className="font-titillium py-2.5 4xl:py-3.5 px-5 md:flex md:items-center md:justify-between dark:bg-black">
+    <footer className="font-titillium py-2.5 4xl:py-3.5 px-5 md:flex md:items-center md:justify-between z-10">
       {/* Home Button */}
       <div
         className="search-container"
@@ -54,7 +54,7 @@ const Footer = () => {
       >
         <Link
           to="/"
-          className="search-input dark:bg-black bg-white dark:hover:bg-transparent hover:bg-transparent dark:text-white dark:hover:text-white text-black hover:text-white inline-flex px-3 py-3 font-bold text-center uppercase align-middle rounded-lg cursor-pointer leading-normal text-xs transition-all"
+          className="search-input dark:hover:bg-transparent hover:bg-transparent dark:text-white dark:hover:text-white text-black hover:text-white inline-flex px-3 py-3 font-bold text-center uppercase align-middle rounded-lg cursor-pointer leading-normal text-xs transition-all"
         >
           <IoHome fontSize={16} className="mr-2" />
           {language === "english" ? "Home" : "Inicio"}
