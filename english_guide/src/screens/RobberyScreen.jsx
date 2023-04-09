@@ -2,12 +2,13 @@ import React, { useContext, useCallback, useRef, useState } from "react";
 import { LanguageContext } from "../components/context/LanguageContext";
 import { BsCheckCircleFill, BsFillXCircleFill } from "react-icons/bs";
 import { MdArrowForwardIos } from "react-icons/md";
-import { RiArrowLeftSFill, RiArrowRightSFill } from "react-icons/ri"
+import { RiArrowLeftSFill, RiArrowRightSFill } from "react-icons/ri";
 import { TbCopy } from "react-icons/tb";
 import ReactCanvasConfetti from "react-canvas-confetti";
 import { maintenances } from "../constants/maintenances";
 
 const RobberyScreen = () => {
+  const { language } = useContext(LanguageContext);
   const [selectedMaintenance, setSelectedMaintenance] = useState(
     maintenances[0].encoding.find((item) => item.subtype === "501")
   );
@@ -20,8 +21,6 @@ const RobberyScreen = () => {
   const handleCopyClick = () => {
     navigator.clipboard.writeText(selectedMaintenance.text);
   };
-
-  const { language } = useContext(LanguageContext);
 
   // Fire Function
   const canvasStyles = {
@@ -84,33 +83,42 @@ const RobberyScreen = () => {
   // Slider Function
   const questions = [
     {
-      english : "1.- Are you OK? Have you suffered any harm?",
-      español : "1.- ¿Se encuentra bien?. ¿Ha sufrido algún daño?"
+      english: "1.- Are you OK? Have you suffered any harm?",
+      español: "1.- ¿Se encuentra bien?. ¿Ha sufrido algún daño?",
     },
     {
-      english : "2.- Should we inform the authorities about the intrusion or you already informed them about it?",
-      español : "2.- ¿Debemos informar a las autoridades sobre la intrusion o ya han sido avisados por usted?"
+      english:
+        "2.- Should we inform the authorities about the intrusion or you already informed them about it?",
+      español:
+        "2.- ¿Debemos informar a las autoridades sobre la intrusion o ya han sido avisados por usted?",
     },
     {
-      english : "3.- Did the forensic police has already been there? Do they plan to go?",
-      español : "3.- ¿Ha acudido la científica?. ¿Le han dicho si van a acudir?"
+      english:
+        "3.- Did the forensic police has already been there? Do they plan to go?",
+      español: "3.- ¿Ha acudido la científica?. ¿Le han dicho si van a acudir?",
     },
     {
-      english : "4.- Around what time do you think the intrussion took place?",
-      español : "4.- ¿Sobre qué momento calcula que se produjo la intrusión?"
+      english: "4.- Around what time do you think the intrussion took place?",
+      español: "4.- ¿Sobre qué momento calcula que se produjo la intrusión?",
     },
     {
-      english : "5.- Did they break a window or door? Did they get in through the roof?",
-      español : "5.- ¿Rompieron alguna puerta o ventana?. ¿Accedieron a través del tejado?"
+      english:
+        "5.- Did they break a window or door? Did they get in through the roof?",
+      español:
+        "5.- ¿Rompieron alguna puerta o ventana?. ¿Accedieron a través del tejado?",
     },
     {
-      english : "6.- Is there any damage on the alarm system? which sensors have been damaged?",
-      español : "6.- ¿Existe algún daño en su alarma?. ¿Que sensores se encuentran averiados?"
+      english:
+        "6.- Is there any damage on the alarm system? which sensors have been damaged?",
+      español:
+        "6.- ¿Existe algún daño en su alarma?. ¿Que sensores se encuentran averiados?",
     },
     {
-      english : "7.- Could you please tell me which path you think intruders took around your installation?",
-      español : "7.- ¿Podría decirnos que ruta tomaron los intrusos para acceder?"
-    }
+      english:
+        "7.- Could you please tell me which path you think intruders took around your installation?",
+      español:
+        "7.- ¿Podría decirnos que ruta tomaron los intrusos para acceder?",
+    },
   ];
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
@@ -131,8 +139,8 @@ const RobberyScreen = () => {
         <div className="rounded-md dark:bg-black py-0 px-2 flex flex-col w-max h-full items-center text-black dark:text-white justify-center mr-3">
           <h4 className="my-6 font-bold">
             {language === "english"
-              ? "Burglary maintenances"
-              : "Mantenimientos por robos"}
+              ? maintenances.title.english
+              : maintenances.title.español}
           </h4>
           {/* Buttons */}
           <div className="divide-y divide-[#00000030] dark:divide-[#333] text-sm 4xl:text-base font-light tracking-wider ">
@@ -144,7 +152,11 @@ const RobberyScreen = () => {
               >
                 <MdArrowForwardIos />
                 <div className="w-full flex flex-row justify-start">
-                  <h4 className="ml-3 mr-1 my-4">{language === "english" ? item.reason.english : item.reason.español}</h4>
+                  <h4 className="ml-3 mr-1 my-4">
+                    {language === "english"
+                      ? item.reason.english
+                      : item.reason.español}
+                  </h4>
                 </div>
               </button>
             ))}
@@ -160,20 +172,24 @@ const RobberyScreen = () => {
               className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white bg-black text-white hover:bg-white hover:text-black font-bold text-center uppercase align-middle cursor-pointer leading-normal text-sm transition-all inner_card px-4 h-full border-[1px] border-r-0 rounded-l-lg dark:border-[#333]"
               onClick={handlePrevClick}
             >
-              <RiArrowLeftSFill/>
+              <RiArrowLeftSFill />
               Prev
             </button>
             <div className="inner_card dark:bg-black question h-full w-[800px] maxteams:w-[450px] p-2 flex flex-col items-center justify-center border-[1px] dark:border-[#333] text-center">
               <span className="font-semibold text-xl 4xl:text-2xl text-black dark:text-white pb-4">
                 {language === "english" ? "Questions" : "Preguntas"}
               </span>
-              <span>{language === "english" ? questions[currentQuestionIndex].english : questions[currentQuestionIndex].español}</span>
+              <span>
+                {language === "english"
+                  ? questions[currentQuestionIndex].english
+                  : questions[currentQuestionIndex].español}
+              </span>
             </div>
             <button
               className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white bg-black text-white hover:bg-white hover:text-black font-bold text-center uppercase align-middle cursor-pointer leading-normal text-sm transition-all inner_card px-4 h-full border-[1px] border-l-0 rounded-r-lg dark:border-[#333]"
               onClick={handleNextClick}
             >
-              <RiArrowRightSFill/>
+              <RiArrowRightSFill />
               Next
             </button>
           </div>
@@ -220,7 +236,11 @@ const RobberyScreen = () => {
                   <p className="dark:text-[#7e7e7e] text-[#606060] text-[0.85rem] m-2 p-3 border-dashed border border-[#30363d] rounded-md">
                     {selectedMaintenance && selectedMaintenance.text}
                   </p>
-                  <p className="text-xs">{language === "english" ? "Press the button to copy" : "Pulsa para copiar el texto"}</p>
+                  <p className="text-xs">
+                    {language === "english"
+                      ? "Press the button to copy"
+                      : "Pulsa para copiar el texto"}
+                  </p>
                   {/* Button */}
                   <div>
                     <ReactCanvasConfetti

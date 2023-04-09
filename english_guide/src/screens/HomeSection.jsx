@@ -16,7 +16,7 @@ const HomeSection = ({ setShowCopiedAlert }) => {
             className="flex flex-col justify-between items-center w-max my-0 mx-auto"
           >
               {/* Card */}
-              <div className="card p-0 h-[19rem]">
+              <div className="card p-0 h-[19rem] dark:bg-[#151618]">
                 {/* Image Logo */}
                 <Link to={page.to}>
                   <img
@@ -26,7 +26,7 @@ const HomeSection = ({ setShowCopiedAlert }) => {
                   />
                 </Link>
                 <div className="p-5 w-60 flex flex-col justify-between h-[10.5rem]">
-                  <h5 className="mb-1 font-semibold text-base font-bold tracking-tight text-gray-900 dark:text-white">
+                  <h5 className="mb-1 text-base font-bold tracking-tight text-gray-900 dark:text-white">
                     {page.title[language]}
                   </h5>
                   <p className="mb-1 text-xs font-normal text-gray-700 dark:text-gray-400">
