@@ -1,20 +1,16 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../../components/context/LanguageContext";
-import { cameras } from "../../constants/cameras";
 
-const CameraDB = () => {
-  const { language } = useContext(LanguageContext);  
-  // Find in the object the array which has 'title' in  "english"
-  const camera = cameras.find(
-    (m) => m.models.model === "Samsung"
-  );
-  const model = cameras.models.submodels.find((e) => e.icon);
+const CameraDB = ({ cameras }) => {
+  console.log(cameras);
+  const { language } = useContext(LanguageContext);
 
   return (
     <div className="flex flex-col w-full z-10">
       <div className="topside">
         {/* Image Camera */}
-        <img src={cameras.icon} alt="" />
+        <img src={cameras?.icon} alt={cameras?.nombre} />
+        {/* <img src={cameras?.imagen} alt={cameras?.nombre} /> */}
         {/* Features Card */}
         <div className="h-max flex flex-col w-fill_available mx-4 my-2">
           {/* top div */}

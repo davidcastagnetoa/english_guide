@@ -7,33 +7,24 @@ import { Route, Routes } from "react-router-dom";
 import CameraDB from "../screens/Dashboard/CameraDB";
 
 const CamerasScreen = () => {
+  console.log(cameras);
   const { language } = useContext(LanguageContext);
+
+  // Toggle Dropdownmenu
   const [menuVisible, setMenuVisible] = useState(
     cameras[0].models.map(() => false)
   );
-
-  const [selectedCamera, setSelectedCamera] = useState(
-    cameras[0].models.find((item) => item.model === "samsung")
-  );
-
   const toggleMenu = (index) => {
     setMenuVisible((prevState) =>
       prevState.map((value, i) => (i === index ? !value : value))
     );
   };
 
-  const handleSubmodelClick = (submodelName) => {
-    console.log(submodelName);
-  };
-
-  const handleModelClick = (key) => {
-    setSelectedCamera(cameras[0].models.find((item) => item.model === key));
-    setMenuVisible(true);
-  };
-
-  //Text Copy Button
-  const handleCopyClick = () => {
-    navigator.clipboard.writeText(selectedCamera.text);
+  // Camera Model Button
+  const [selectedCamara, setSelectedCamara] = useState(null);
+  const handleSubmodelClick = (submodel) => {
+    console.log(submodel);
+    setSelectedCamara(submodel);
   };
 
   return (
@@ -53,7 +44,6 @@ const CamerasScreen = () => {
               <div key={index}>
                 <button
                   className="w-[220px] dark:active:text-[#00d0ff] active:text-[#0072d3] active:font-bold hover:bg-[#8181812e] hover:transform hover:scale-106 flex flex-row items-center cursor-pointer border-t border-[#00000030] dark:border-[#333]"
-                  // onClick={() => handleModelClick(index)}
                   onClick={() => toggleMenu(index)}
                 >
                   <MdArrowForwardIos />
@@ -73,18 +63,17 @@ const CamerasScreen = () => {
                   }`}
                 >
                   {/* Submenu Button */}
-                  {item.submodels.map((submodel) => (
+                  {item.submodels.map((submodel, icon) => (
                     <button
                       key={submodel.id}
                       className="my-0.5 dark:bg-[#111] dark:hover:bg-[#333] dark:text-white dark:hover:text-white bg-white text-black hover:bg-black hover:text-white px-[0.7rem] py-[0.2rem] rounded hover:transform cursor-pointer w-full flex flex-row items-start "
-                      onClick={() => handleSubmodelClick(submodel.name)}
+                      onClick={() => handleSubmodelClick(submodel.icon)}
                     >
                       <GiCctvCamera />
                       <span className="ml-2">{submodel.name}</span>
                     </button>
                   ))}
                 </div>
-                {/* )} */}
               </div>
             ))}
           </div>
@@ -152,12 +141,7 @@ const CamerasScreen = () => {
             </div>
           </div>
         </div>
-        <Routes>
-          <Route path="/" element={<CameraDB />} />
-        </Routes>
-        {/* Image Card */}
-        {/* Maintenance Card */}
-        {/* Process Card */}
+        <CameraDB cameras={selectedCamara.submodel} />
       </div>
     </div>
   );

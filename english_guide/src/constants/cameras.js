@@ -1,7 +1,4 @@
-import {
-  arloIndoor,
-  arloSpotlight,
-} from "../assets/images";
+import { arloIndoor, arloSpotlight } from "../assets/images";
 
 const cameras = [
   {
@@ -51,14 +48,49 @@ const cameras = [
           {
             submodel: "Indoor",
             name: "Essential Indoor",
-            description: "",
+            description: {
+              english:
+                "Video camera with motion detection and audio alert system. Power supply required.",
+              español:
+                "Videocamara con sistema de alertas de detección de movimiento y audio. Requiere suministro electrico",
+            },
             icon: arloIndoor,
-            features: [],
+            features: [
+              {
+                english: "130 degrees Wide viewing angle",
+                español: "Amplio ángulo de visión de 130 grados",
+              },
+              {
+                english: "Connection to power supply network.",
+                español: "Conexión a la red electrica",
+              },
+              {
+                english: "Built-in Spotlight",
+                español: "Proyector incorporado",
+              },
+              {
+                english: "Only internals zones ",
+                español: "Solo interiores",
+              },
+              {
+                english: "Black & White Night Vision",
+                español: "Vision Nocturna Blanco/Negro",
+              },
+              {
+                english: "No SmarthHub required",
+                español: "Sin Estación Base",
+              },
+            ],
           },
           {
             submodel: "Spotlight",
             name: "Essential Spotlight",
-            description: "",
+            description: {
+              english:
+                "Wireless weatherproof video camera featuring motion and audio detection alerts. It has solar panels",
+              español:
+                "Videocamara inalámbrica resistente a la intemperie, dispone de alertas de detección de movimiento y audio. Dispone de placas solares",
+            },
             icon: arloSpotlight,
             features: [
               {
