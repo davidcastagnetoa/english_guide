@@ -2,8 +2,9 @@ import React, { useContext, useState } from "react";
 import { LanguageContext } from "../components/context/LanguageContext";
 import { cameras } from "../constants/cameras";
 import { MdArrowForwardIos } from "react-icons/md";
-import { SiArlo, SiSamsung } from "react-icons/si";
 import { GiCctvCamera } from "react-icons/gi";
+import { Route, Routes } from "react-router-dom";
+import CameraDB from "../screens/Dashboard/CameraDB";
 
 const CamerasScreen = () => {
   const { language } = useContext(LanguageContext);
@@ -151,6 +152,12 @@ const CamerasScreen = () => {
             </div>
           </div>
         </div>
+        <Routes>
+          <Route path="/" element={<CameraDB />} />
+        </Routes>
+        {/* Image Card */}
+        {/* Maintenance Card */}
+        {/* Process Card */}
       </div>
     </div>
   );

@@ -6,5 +6,7 @@ import billings from "./billing.png";
 import support from "./support.png";
 import technicians from "./technician.jpg";
 import classics from "./classics.png";
+import arloIndoor from "./arloIndoor.png";
+import arloSpotlight from "./arloSpotlight.png";
 
-export { burglared, cameras, moonshot, fast, billings, support, classics, technicians };
+export { burglared, cameras, moonshot, fast, billings, support, classics, technicians, arloIndoor, arloSpotlight };

@@ -15,7 +15,7 @@ const RobberyScreen = () => {
     (m) => m.title.english === "Burglared Maintenances"
   );
   // Find in the object the array 'encoding' which has 'reason' in  "english"
-  // const reason = maintenance.encoding.find((e) => e.reason.english);
+  const reason = maintenance.encoding.find((e) => e.reason.english);
 
   const [selectedMaintenance, setSelectedMaintenance] = useState(
     maintenances[0].encoding.find((item) => item.subtype === "501")

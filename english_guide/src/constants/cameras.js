@@ -1,3 +1,8 @@
+import {
+  arloIndoor,
+  arloSpotlight,
+} from "../assets/images";
+
 const cameras = [
   {
     models: [
@@ -11,24 +16,28 @@ const cameras = [
             submodel: "6410",
             name: "CloudCam Pro",
             description: "",
+            icon: "",
             features: [],
           },
           {
             submodel: "6415",
             name: "CloudCam N1",
             description: "",
+            icon: "",
             features: [],
           },
           {
             submodel: "6110",
             name: "CloudCam Mini",
             description: "",
+            icon: "",
             features: [],
           },
           {
             submodel: "6430",
             name: "CloudCam Pro External",
             description: "",
+            icon: "",
             features: [],
           },
         ],
@@ -43,12 +52,14 @@ const cameras = [
             submodel: "Indoor",
             name: "Essential Indoor",
             description: "",
+            icon: arloIndoor,
             features: [],
           },
           {
             submodel: "Spotlight",
             name: "Essential Spotlight",
             description: "",
+            icon: arloSpotlight,
             features: [
               {
                 english: "130 degrees Wide viewing angle",
