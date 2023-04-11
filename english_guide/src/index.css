@@ -216,3 +216,56 @@ hr {
     z-index: -1;
   }
 }
+/* Icons */
+
+@font-face {
+  font-family: icomoon;
+  src: url(../src/assets/fonts/icomoon.woff) format("woff"), url(../src/assets/fonts/icomoon.svg) format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block
+}
+
+[class*=" arlo-icon-"],
+[class^= arlo-icon-] {
+  font-family: icomoon !important;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 24px;
+}
+
+.arlo-icon-160-field-view:before {
+  content: "\E93F";
+}
+.arlo-icon-130-field-view:before {
+  content: "\E901";
+}
+.arlo-icon-charging-battery:before {
+  content: "\E931";
+}
+.arlo-icon-plug:before {
+  content: "\E940";
+  font-size: 1.3pc;
+}
+.arlo-icon-flash-light:before {
+  content: "\E930";
+}
+.fa-tree:before {
+  content: "\f1bb";
+}
+.arlo-icon-arlo-essential:before{
+  content: "\E941";
+}
+.arlo-icon-arlo-essential-indoor:before{
+  content: "\E943";
+}
+#icon_Hub.NoImage{
+  display: none;
+}
+#wifi_Icon.NoImage{
+  display: none;
+}

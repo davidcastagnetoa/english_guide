@@ -1,4 +1,11 @@
-import { arloIndoor, arloSpotlight } from "../assets/images";
+import {
+  samsungN1,
+  samsung6110,
+  samsung6410,
+  samsung6430,
+  arloIndoor,
+  arloSpotlight,
+} from "../assets/images";
 
 const cameras = [
   {
@@ -13,28 +20,28 @@ const cameras = [
             submodel: "6410",
             name: "CloudCam Pro",
             description: "",
-            icon: "",
+            icon: samsung6410,
             features: [],
           },
           {
             submodel: "6415",
             name: "CloudCam N1",
             description: "",
-            icon: "",
+            icon: samsungN1,
             features: [],
           },
           {
             submodel: "6110",
             name: "CloudCam Mini",
             description: "",
-            icon: "",
+            icon: samsung6110,
             features: [],
           },
           {
             submodel: "6430",
             name: "CloudCam Pro External",
             description: "",
-            icon: "",
+            icon: samsung6430,
             features: [],
           },
         ],
