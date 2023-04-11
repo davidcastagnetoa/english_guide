@@ -3,11 +3,10 @@ import { LanguageContext } from "../components/context/LanguageContext";
 import { cameras } from "../constants/cameras";
 import { MdArrowForwardIos } from "react-icons/md";
 import { GiCctvCamera } from "react-icons/gi";
-import { Route, Routes } from "react-router-dom";
 import CameraDB from "../screens/Dashboard/CameraDB";
 
 const CamerasScreen = () => {
-  console.log(cameras);
+  // console.log(cameras);
   const { language } = useContext(LanguageContext);
 
   // Toggle Dropdownmenu
@@ -67,7 +66,7 @@ const CamerasScreen = () => {
                     <button
                       key={submodel.id}
                       className="my-0.5 dark:bg-[#111] dark:hover:bg-[#333] dark:text-white dark:hover:text-white bg-white text-black hover:bg-black hover:text-white px-[0.7rem] py-[0.2rem] rounded hover:transform cursor-pointer w-full flex flex-row items-start "
-                      onClick={() => handleSubmodelClick(submodel.icon)}
+                      onClick={() => handleSubmodelClick(submodel)}
                     >
                       <GiCctvCamera />
                       <span className="ml-2">{submodel.name}</span>
@@ -141,7 +140,8 @@ const CamerasScreen = () => {
             </div>
           </div>
         </div>
-        <CameraDB cameras={selectedCamara.submodel} />
+        {/* cameras={selectedCamara.submodel} */}
+        <CameraDB cameraData={selectedCamara}  />
       </div>
     </div>
   );

@@ -1,15 +1,14 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../../components/context/LanguageContext";
 
-const CameraDB = ({ cameras }) => {
-  console.log(cameras);
+const CameraDB = ({ cameraData }) => {
   const { language } = useContext(LanguageContext);
 
   return (
     <div className="flex flex-col w-full z-10">
       <div className="topside">
         {/* Image Camera */}
-        <img src={cameras?.icon} alt={cameras?.nombre} />
+        <img src={cameraData?.icon} alt={cameraData?.name} />
         {/* <img src={cameras?.imagen} alt={cameras?.nombre} /> */}
         {/* Features Card */}
         <div className="h-max flex flex-col w-fill_available mx-4 my-2">
