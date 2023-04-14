@@ -1,20 +1,37 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { LanguageContext } from "../components/context/LanguageContext";
 import { pages } from "../constants/index";
 import { Link } from "react-router-dom";
 import { IoMdCopy } from "react-icons/io";
+import HomeLoader from "../assets/skeleton/HomeLoader";
 
 const HomeSection = ({ setShowCopiedAlert }) => {
   const { language } = useContext(LanguageContext);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate component loading for a few seconds
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 100);
+  }, []);
+
 
   return (
     <>
       <div className="grid grid-cols-4 grid-rows-2 justify-center items-center h-auto w-[70rem] gap-6 4xl:gap-8 mt-5 4x:mt-0 mx-auto">
-        {pages.map((page, index) => (
-          <div
-            key={index}
-            className="flex flex-col justify-between items-center w-max my-0 mx-auto"
-          >
+
+        {/* Render the Skeleton component while components are loading */}
+        {isLoading ? (
+          Array.from({ length: 8 }).map((_, index) => (
+            <HomeLoader key={index} />
+          ))
+        ) : (
+          pages.map((page, index) => (
+            <div
+              key={index}
+              className="flex flex-col justify-between items-center w-max my-0 mx-auto"
+            >
               {/* Card */}
               <div className="card p-0 h-[19rem] dark:bg-[#151618]">
                 {/* Image Logo */}
@@ -60,8 +77,9 @@ const HomeSection = ({ setShowCopiedAlert }) => {
                   </div>
                 </div>
               </div>
-          </div>
-        ))}
+            </div>
+          ))
+        )}
       </div>
     </>
   );

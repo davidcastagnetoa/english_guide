@@ -30,7 +30,7 @@ const CamerasScreen = () => {
     <div className="w-full flex flex-row h-full font-titillium">
       {/* Left Side Options banner */}
       <div className="hscreen font-titillium z-10">
-        <div className="pt-[3rem] rounded-md dark:bg-black py-0 px-2 flex flex-col w-max h-full items-center text-black dark:text-white justify-start mr-3">
+        <div className="pt-[3rem] rounded-md py-0 px-2 flex flex-col w-max h-full items-center text-black dark:text-white justify-start mr-3">
           <h4 className="my-6 font-bold">
             {language === "english"
               ? "Choose a camera model"
@@ -62,9 +62,9 @@ const CamerasScreen = () => {
                   }`}
                 >
                   {/* Submenu Button */}
-                  {item.submodels.map((submodel, icon) => (
+                  {item.submodels.map((submodel, index) => (
                     <button
-                      key={submodel.id}
+                      key={index}
                       className="my-0.5 dark:bg-[#111] dark:hover:bg-[#333] dark:text-white dark:hover:text-white bg-white text-black hover:bg-black hover:text-white px-[0.7rem] py-[0.2rem] rounded hover:transform cursor-pointer w-full flex flex-row items-start "
                       onClick={() => handleSubmodelClick(submodel)}
                     >

@@ -15,7 +15,7 @@ const RobberyScreen = () => {
     (m) => m.title.english === "Burglared Maintenances"
   );
   // Find in the object the array 'encoding' which has 'reason' in  "english"
-  const reason = maintenance.encoding.find((e) => e.reason.english);
+  // const reason = maintenance.encoding.find((e) => e.reason.english);
 
   const [selectedMaintenance, setSelectedMaintenance] = useState(
     maintenances[0].encoding.find((item) => item.subtype === "501")
@@ -137,7 +137,7 @@ const RobberyScreen = () => {
     <div className="w-full flex flex-row h-full font-titillium">
       {/* Left Side Options banner */}
       <div className="hscreen font-titillium z-10">
-        <div className="rounded-md dark:bg-black py-0 px-2 flex flex-col w-max h-full items-center text-black dark:text-white justify-center mr-3">
+        <div className="rounded-md py-0 px-2 flex flex-col w-max h-full items-center text-black dark:text-white justify-center mr-3">
           <h4 className="my-6 font-bold">
             {language === "english"
               ? maintenance.title.english

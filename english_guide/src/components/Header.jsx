@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/images/logo_securitas.webp";
 import { IoMdSearch } from "react-icons/io";
 import Switcher from "./Switcher";
 import DropdownMenu from "./DropdownMenu";
 import { LanguageContext } from "./context/LanguageContext";
+import { Input } from "@vercel/examples-ui";
 
 const Header = (props) => {
   const { searchTerm, setSearchTerm } = props;
@@ -31,7 +32,7 @@ const Header = (props) => {
   }, []);
 
   return (
-    <header className="z-10">
+    <header className="z-[200]">
       <nav className="font-titillium border-gray-200 px-4 lg:px-6 py-2.5 4xl:py-3.5 text-slate-900 dark:text-white">
         <div className="flex flex-wrap justify-between items-center mx-auto">
           <div className="flex items-center">
@@ -48,11 +49,11 @@ const Header = (props) => {
               </span>
             </div>
           </div>
-          <div className="flex items-center lg:order-2 lg:w-96 w-full space-x-1 ">
+          <div className="flex items-center lg:order-2 lg:w-96 w-full space-x-1 z-50">
             {/* Language Toggle Button */}
             <DropdownMenu />
             {/* input search */}
-            <div className="flex w-full mr-2 p-2  rounded-md items-center justify-center text-sm ring-1 ring-slate-200 hover:ring-slate-300 dark:bg-zinc-800 dark:ring-inset dark:ring-white/5 dark:hover:bg-zinc-800 dark:hover:ring-zinc-500">
+            <div className="flex w-full mr-2 p-2 rounded-md items-center justify-center text-sm ring-1 ring-slate-300 hover:ring-slate-30 dark:ring-inset dark:ring-white/25 dark:hover:ring-zinc-500">
               <IoMdSearch fontSize={25} className="ml-1" />
               <input
                 type="text"
@@ -60,7 +61,7 @@ const Header = (props) => {
                 value={searchTerm}
                 placeholder={language === "english" ? "Search" : "Buscar"}
                 onFocus={() => navigate("/search")}
-                className="ml-2 w-full dark:bg-zinc-800 outline-none"
+                className="ml-2 w-full bg-transparent outline-none"
               />
             </div>
             {/* Toggle dark/light button */}

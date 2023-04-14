@@ -45,7 +45,7 @@ const Footer = () => {
   }, [gradients]);
 
   return (
-    <footer className="font-titillium py-2.5 4xl:py-3.5 px-5 md:flex md:items-center md:justify-between z-10">
+    <footer className="font-titillium py-2.5 4xl:py-3.5 px-5 md:flex md:items-center md:justify-between z-[200]">
       {/* Home Button */}
       <div
         className="search-container"
@@ -62,7 +62,7 @@ const Footer = () => {
       </div>
       {/* Return Back Button */}
       <button
-        className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white dark:hover:border-[#ffffff73]  bg-black text-white hover:bg-white hover:text-black hover:border-black border inline-flex px-3 py-2.5 font-bold text-center uppercase align-middle rounded-lg cursor-pointer leading-normal text-xs transition-all  "
+        className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white dark:hover:border-[#ffffff73]  bg-black text-white hover:bg-white hover:text-black hover:border-black border inline-flex px-3 py-2.5 font-bold text-center uppercase align-middle rounded-lg cursor-pointer leading-normal text-xs transition-all z-100"
         onClick={() => window.history.back()}
       >
         <IoArrowBack fontSize={16} className="mr-2" />

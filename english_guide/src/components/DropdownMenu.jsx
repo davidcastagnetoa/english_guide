@@ -28,7 +28,7 @@ const DropdownMenu = () => {
   // };
 
   return (
-    <div className="relative text-gray-700 dark:text-gray-300 z-50">
+    <div className="relative text-gray-700 dark:text-gray-300">
       <button
         onClick={handleClick}
         type="button"
