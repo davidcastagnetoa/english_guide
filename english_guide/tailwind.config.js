@@ -31,7 +31,7 @@ module.exports = {
       // => @media (min-width: 1920px) { ... }
       'teams': '1500px',
       // => @media (min-width: 1500px) { ... }
-      'miniteams': '1170px',
+      'miniteams': '1168px',
       // => @media (min-width: 1170px) { ... }
       //Max Width
       'maxandroid': {'max': '418px'},
@@ -50,7 +50,7 @@ module.exports = {
       // => @media (max-width: 1600px) { ... }
       'maxteams': {'max': '1500px'},
       // => @media (max-width: 1500px) { ... }
-      'maxminiteams': {'max': '1170px'},
+      'maxminiteams': {'max': '1168px'},
       // => @media (max-width: 1170px) { ... }
     },
     extend: {
