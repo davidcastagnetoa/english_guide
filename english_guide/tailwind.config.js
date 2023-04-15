@@ -31,6 +31,8 @@ module.exports = {
       // => @media (min-width: 1920px) { ... }
       'teams': '1500px',
       // => @media (min-width: 1500px) { ... }
+      'miniteams': '1170px',
+      // => @media (min-width: 1170px) { ... }
       //Max Width
       'maxandroid': {'max': '418px'},
       // => @media (max-width: 639px) { ... }
@@ -44,8 +46,12 @@ module.exports = {
       // => @media (max-width: 1279px) { ... }
       'max2xl': {'max': '1535px'},
       // => @media (max-width: 1535px) { ... }
+      'max3xl': {'max': '1600px'},
+      // => @media (max-width: 1600px) { ... }
       'maxteams': {'max': '1500px'},
-      // => @media (min-width: 1500px) { ... }
+      // => @media (max-width: 1500px) { ... }
+      'maxminiteams': {'max': '1170px'},
+      // => @media (max-width: 1170px) { ... }
     },
     extend: {
       fontFamily: {

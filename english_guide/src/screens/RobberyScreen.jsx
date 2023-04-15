@@ -230,24 +230,24 @@ const RobberyScreen = () => {
         <div className="carousel-container 4xl:w-full w-max">
           <div className="carousel flex flex-row 4xl:flex-row 4xl justify-center items-center 4xl:h-[180px] h-full">
             <button
-              className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white bg-black text-white hover:bg-white hover:text-black font-bold text-center uppercase align-middle cursor-pointer leading-normal text-sm transition-all inner_card px-4 h-full border-[1px] border-r-0 rounded-l-lg dark:border-[#333]"
+              className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white bg-black text-white hover:bg-white hover:text-black font-bold text-center uppercase align-middle cursor-pointer leading-normal text-sm transition-all inner_card px-4 h-full border-[1px] border-r-0 rounded-l-lg dark:border-[#333] maxminiteams:px-3 maxminiteams:py-0"
               onClick={handlePrevClick}
             >
               <RiArrowLeftSFill />
               Prev
             </button>
-            <div className="inner_card dark:bg-black question h-full w-[800px] maxteams:w-[450px] p-2 flex flex-col items-center justify-center border-[1px] dark:border-[#333] text-center">
+            <div className="inner_card dark:bg-black question h-full w-[800px] maxminiteams:w-[15rem] max3xl:w-[30rem] p-2 flex flex-col items-center justify-center border-[1px] dark:border-[#333] text-center">
               <span className="font-semibold text-xl 4xl:text-2xl text-black dark:text-white pb-4">
                 {language === "english" ? "Questions" : "Preguntas"}
               </span>
-              <span>
+              <span className="maxminiteams:text-[0.9rem]">
                 {language === "english"
                   ? questions[currentQuestionIndex].english
                   : questions[currentQuestionIndex].español}
               </span>
             </div>
             <button
-              className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white bg-black text-white hover:bg-white hover:text-black font-bold text-center uppercase align-middle cursor-pointer leading-normal text-sm transition-all inner_card px-4 h-full border-[1px] border-l-0 rounded-r-lg dark:border-[#333]"
+              className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white bg-black text-white hover:bg-white hover:text-black font-bold text-center uppercase align-middle cursor-pointer leading-normal text-sm transition-all inner_card px-4 h-full border-[1px] border-l-0 rounded-r-lg dark:border-[#333] maxminiteams:px-3 maxminiteams:py-0"
               onClick={handleNextClick}
             >
               <RiArrowRightSFill />
@@ -261,22 +261,22 @@ const RobberyScreen = () => {
             <div className="h-max flex flex-col w-max">
               <div className="items-center flex flex-col h-full w-full justify-center">
                 {/* top div */}
-                <div className="dark:text-white inner_card bg-[#f6f8fa] dark:border-[#333] p-2 border-[1px] border-b-0 rounded-t-lg flex flex-col justify-center items-center w-[36rem]">
+                <div className="dark:text-white inner_card bg-[#f6f8fa] dark:border-[#333] p-2 border-[1px] border-b-0 rounded-t-lg flex flex-col justify-center items-center w-[36rem] maxminiteams:w-[30rem]">
                   {/* Title */}
-                  <span className="font-semibold text-xl 4xl:text-2xl text-black dark:text-white">
+                  <span className="font-semibold text-xl 4xl:text-2xl text-black dark:text-white maxminiteams:text-[1.1rem]">
                     {language === "english" ? "Maintenances" : "Mantenimientos"}
                   </span>
                   {/* Subtitle */}
-                  <p className="mt-0 4xl:mt-1 text-base font-light text-black dark:text-white">
+                  <p className="mt-0 4xl:mt-1 text-base font-light text-black dark:text-white maxminiteams:text-[0.85rem]">
                     {language === "english"
                       ? "Kindly ensure that all relevant information is obtained from the customer"
                       : "Asegúrate de obtener todos la información del cliente :"}
                   </p>
                 </div>
                 {/* bottom div */}
-                <div className="h-[285px] inner_card dark:bg-black dark:border-[#333] p-2 rounded-b-lg flex flex-col justify-between items-center w-[36rem]">
+                <div className="h-[285px] max3xl:h-[16.5rem] maxminiteams:h-[15.5rem] maxminiteams:w-[30rem] inner_card dark:bg-black dark:border-[#333] p-2 rounded-b-lg flex flex-col justify-between items-center w-[36rem]">
                   {/* Subtitle */}
-                  <div className="justify-between flex flex-row m-2 px-3 w-full items-center">
+                  <div className="justify-between flex flex-row m-2 px-3 w-full items-center maxminiteams:text-[0.85rem]">
                     {language === "english"
                       ? "Open maintenances or ticket"
                       : "Abre el mantenimiento o aviso"}
@@ -294,7 +294,7 @@ const RobberyScreen = () => {
                     </div>
                   </div>
                   {/* Maintenance Text */}
-                  <p className="dark:text-[#7e7e7e] text-[#606060] text-[0.85rem] m-2 p-3 border-dashed border border-[#30363d] rounded-md">
+                  <p className="dark:text-[#7e7e7e] text-[#606060] text-[0.85rem] max3xl:text-[0.8rem] maxminiteams:text-[0.75rem] maxminiteams:m-1 maxminiteams:p-1.5 m-2 p-3 max3xl:p-2 border-dashed border border-[#30363d] rounded-md">
                     {selectedMaintenance && selectedMaintenance.text}
                   </p>
                   <div className="flex flex-col items-center">
@@ -315,7 +315,7 @@ const RobberyScreen = () => {
                           handleCopyClick();
                         }}
                         id="copyBtn"
-                        className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white dark:hover:border-[#ffffff73] bg-black text-white hover:bg-white hover:text-black hover:border-black border inline-flex font-bold text-center uppercase align-middle px-4 py-2 rounded-lg cursor-pointer leading-normal text-sm transition-all"
+                        className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white dark:hover:border-[#ffffff73] bg-black text-white hover:bg-white hover:text-black hover:border-black border inline-flex font-bold text-center uppercase align-middle px-4 py-2 rounded-lg cursor-pointer leading-normal text-sm transition-all maxminiteams:text-[0.85rem] maxminiteams:py-1 maxminiteams:px-9 max3xl:text-[0.85rem] max3xl:py-1.5 max3xl-px-9"
                       >
                         <TbCopy className="text-lg" />
                         {language === "english" ? "Copy" : "Copiar"}
@@ -331,20 +331,20 @@ const RobberyScreen = () => {
             {/* "What to say" card */}
             <div className="h-max flex flex-col w-max">
               {/* top div */}
-              <div className="w-[36rem] inner_card bg-[#f6f8fa] dark:border-[#333] p-2 border-[1px] border-b-0 rounded-t-lg flex flex-col justify-center items-center">
+              <div className="w-[36rem] inner_card bg-[#f6f8fa] dark:border-[#333] p-2 border-[1px] border-b-0 rounded-t-lg flex flex-col justify-center items-center maxminiteams:w-[30rem]">
                 {/* Title */}
-                <span className="font-semibold text-xl 4xl:text-2xl text-black dark:text-white">
+                <span className="font-semibold text-xl 4xl:text-2xl text-black dark:text-white maxminiteams:text-[1.1rem]">
                   {language === "english" ? "Important!" : "Importante!"}
                 </span>
                 {/* Subtitle */}
-                <p className="mt-0 4xl:mt-1 text-base font-light text-black dark:text-white">
+                <p className="mt-0 4xl:mt-1 text-base font-light text-black dark:text-white maxminiteams:text-[0.85rem]">
                   {language === "english"
                     ? "Before to start:"
                     : "Antes de empezar:"}
                 </p>
               </div>
               {/* bottom div */}
-              <div className="h-[285px] w-[36rem] inner_card dark:bg-black dark:border-[#333] p-2 rounded-b-lg flex flex-col justify-center items-center">
+              <div className="h-[285px] max3xl:h-fill_available max3xl:text-[0.95rem] w-[36rem] maxminiteams:w-[30rem] maxminiteams:h-[13rem] maxminiteams:text-[0.8rem] inner_card dark:bg-black dark:border-[#333] p-2 rounded-b-lg flex flex-col justify-center items-center">
                 {/* title form wrapper */}
                 <div className="w-full flex flex-row items-center justify-around mt-0 4xl:mt-2.5 ">
                   <div className="flex flex-row items-center justify-center">
