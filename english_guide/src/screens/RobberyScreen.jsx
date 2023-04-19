@@ -6,6 +6,7 @@ import { RiArrowLeftSFill, RiArrowRightSFill } from "react-icons/ri";
 import { TbCopy } from "react-icons/tb";
 import ReactCanvasConfetti from "react-canvas-confetti";
 import { maintenances } from "../constants/maintenances";
+import { Button } from "@geist-ui/core";
 
 const RobberyScreen = () => {
   const { language } = useContext(LanguageContext);
@@ -165,7 +166,7 @@ const RobberyScreen = () => {
         </div>
       </div>
       {/* Right Side */}
-      <div className="w-full flex 4xl:flex-col flex-row justify-evenly">
+      <div className="w-full flex 4xl:flex-col flex-row-reverse justify-evenly">
         {/* Green Top Patron */}
         <div class="absolute inset-0 z-0 mx-0 max-w-none overflow-hidden">
           <div class="absolute left-1/2 top-0 ml-[-38rem] h-[25rem] w-[81.25rem] dark:[mask-image:linear-gradient(white,transparent)]">
@@ -230,7 +231,7 @@ const RobberyScreen = () => {
         <div className="carousel-container 4xl:w-full w-max">
           <div className="carousel flex flex-row 4xl:flex-row 4xl justify-center items-center 4xl:h-[180px] h-full">
             <button
-              className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white bg-black text-white hover:bg-white hover:text-black font-bold text-center uppercase align-middle cursor-pointer leading-normal text-sm transition-all inner_card px-4 h-full border-[1px] border-r-0 rounded-l-lg dark:border-[#333] maxminiteams:px-3 maxminiteams:py-0"
+              className="dark:bg-sky-900 dark:text-black dark:hover:bg-black dark:hover:text-white bg-black text-white hover:bg-white hover:text-black font-bold text-center uppercase align-middle cursor-pointer leading-normal text-sm transition-all inner_card px-4 h-full border-[1px] border-r-0 rounded-l-lg dark:border-[#333] maxminiteams:px-3 maxminiteams:py-0"
               onClick={handlePrevClick}
             >
               <RiArrowLeftSFill />
@@ -247,7 +248,7 @@ const RobberyScreen = () => {
               </span>
             </div>
             <button
-              className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white bg-black text-white hover:bg-white hover:text-black font-bold text-center uppercase align-middle cursor-pointer leading-normal text-sm transition-all inner_card px-4 h-full border-[1px] border-l-0 rounded-r-lg dark:border-[#333] maxminiteams:px-3 maxminiteams:py-0"
+              className="dark:bg-sky-900 dark:text-black dark:hover:bg-black dark:hover:text-white bg-black text-white hover:bg-white hover:text-black font-bold text-center uppercase align-middle cursor-pointer leading-normal text-sm transition-all inner_card px-4 h-full border-[1px] border-l-0 rounded-r-lg dark:border-[#333] maxminiteams:px-3 maxminiteams:py-0"
               onClick={handleNextClick}
             >
               <RiArrowRightSFill />
@@ -315,7 +316,7 @@ const RobberyScreen = () => {
                           handleCopyClick();
                         }}
                         id="copyBtn"
-                        className="dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white dark:hover:border-[#ffffff73] bg-black text-white hover:bg-white hover:text-black hover:border-black border inline-flex font-bold text-center uppercase align-middle px-4 py-2 rounded-lg cursor-pointer leading-normal text-sm transition-all maxminiteams:text-[0.85rem] maxminiteams:py-1 maxminiteams:px-9 max3xl:text-[0.85rem] max3xl:py-1.5 max3xl-px-9"
+                        className="dark:bg-transparent dark:text-purple-500 dark:hover:bg-purple-500 dark:hover:text-white dark:border-purple-500 dark:hover:border-purple-500 bg-black text-white hover:bg-white hover:text-black hover:border-black border inline-flex font-bold text-center uppercase align-middle px-4 py-2 rounded-lg cursor-pointer leading-normal text-sm transition-all maxminiteams:text-[0.85rem] maxminiteams:py-1 maxminiteams:px-9 max3xl:text-[0.85rem] max3xl:py-1.5 max3xl:px-9"
                       >
                         <TbCopy className="text-lg" />
                         {language === "english" ? "Copy" : "Copiar"}
