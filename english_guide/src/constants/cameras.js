@@ -55,6 +55,7 @@ const cameras = [
           {
             submodel: "Indoor",
             name: "Essential Indoor",
+            sbn_zone: "2040A",
             description: {
               english:
                 "Video camera with motion detection and audio alert system. Power supply required.",
@@ -87,11 +88,48 @@ const cameras = [
                 english: "No SmarthHub required",
                 español: "Sin Estación Base",
               },
+              {
+                english: "Range - Up to 91 meters without obstacles",
+                español: "Alcance	Hasta 91 metros sin obstáculos",
+              },
+              {
+                english: "Frequency - 2.4 GHz",
+                español: "Frecuencia 2,4 GHz",
+              },
+              {
+                english: "Resolution - FHD 1080p",
+                español: "Resolución FHD 1080p",
+              },
+              {
+                english: "Digital Zoom x12.",
+                español: "Zoon digital x12",
+              },
+            ],
+            encoding: [
+              {
+                reason: {
+                  english: "Not connecting to router",
+                  español: "No conecta con router",
+                },
+                type: "1560",
+                subtype: "1561",
+                text: "Cámara no comunica correctamente con router, reconfigurar cámara correctamente de nuevo sin coste ni cargos gracias",
+              },
+              {
+                reason: {
+                  english: " Error in Arlo account email",
+                  español: "Error en email de cuenta de arlo",
+                },
+                type: "1560",
+                subtype: "1562",
+                text: "Error en email de cuenta de arlo del cliente , corregir y revalidar camara a mail que indique cliente gracias",
+              },
             ],
           },
           {
             submodel: "Spotlight",
             name: "Essential Spotlight",
+            sbn_zone: "2030B",
             description: {
               english:
                 "Wireless weatherproof video camera featuring motion and audio detection alerts. It has solar panels",
@@ -101,8 +139,8 @@ const cameras = [
             icon: arloSpotlight,
             features: [
               {
-                english: "130 degrees Wide viewing angle",
-                español: "Amplio ángulo de visión de 130 grados",
+                english: "110 degrees Wide viewing angle",
+                español: "Amplio ángulo de visión de 110 grados",
               },
               {
                 english: "100% Wireless",
@@ -123,6 +161,51 @@ const cameras = [
               {
                 english: "SmarthHub required",
                 español: "Requiere Estación Base",
+              },
+              {
+                english: "Range - Up to 91 meters without obstacles",
+                español: "Alcance	Hasta 91 metros sin obstáculos",
+              },
+              {
+                english: "Frequency - 2.4 GHz",
+                español: "Frecuencia 2,4 GHz",
+              },
+              {
+                english: "Resolution - FHD 1080p",
+                español: "Resolución FHD 1080p",
+              },
+              {
+                english: "Digital Zoom x12.",
+                español: "Zoon digital x12",
+              },
+            ],
+            encoding: [
+              {
+                reason: {
+                  english: "Not connecting to HUB/Internet",
+                  español: "No conecta con HUB/Internet",
+                },
+                type: "1560",
+                subtype: "1561",
+                text: "Cámara no comunica correctamente con HUB, reconfigurar cámara correctamente de nuevo, reubicar o cambair HUB de ser necesario sin coste ni cargos gracias",
+              },
+              {
+                reason: {
+                  english: " Error in Arlo account email",
+                  español: "Error en email de cuenta de arlo",
+                },
+                type: "1560",
+                subtype: "1562",
+                text: "Error en email de cuenta de arlo del cliente , corregir y revalidar camara a mail que indique cliente gracias",
+              },
+              {
+                reason: {
+                  english: "Battery not charging / not working",
+                  español: "Bateria no carga / no funciona",
+                },
+                type: "1560",
+                subtype: "1564",
+                text: "Cámara bateria no carga se ha comprobado con cliente, cambair bateria reubicar o cambiar placa solar de ser necesario sin coste ni cargos gracias",
               },
             ],
           },

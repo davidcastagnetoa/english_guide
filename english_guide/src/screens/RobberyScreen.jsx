@@ -6,7 +6,6 @@ import { RiArrowLeftSFill, RiArrowRightSFill } from "react-icons/ri";
 import { TbCopy } from "react-icons/tb";
 import ReactCanvasConfetti from "react-canvas-confetti";
 import { maintenances } from "../constants/maintenances";
-import { Button } from "@geist-ui/core";
 
 const RobberyScreen = () => {
   const { language } = useContext(LanguageContext);
