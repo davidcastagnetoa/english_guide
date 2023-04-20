@@ -1,21 +1,36 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { LanguageContext } from "../../components/context/LanguageContext";
 import ImageLoader from "../../assets/skeleton/ImageLoader";
 import TitleLoader from "../../assets/skeleton/TitleLoader";
 import TextLoader from "../../assets/skeleton/TextLoader";
+import { MdArrowForwardIos } from "react-icons/md";
 
 const CameraDB = ({ cameraData }) => {
+  // Si cameraData aún no está disponible, muestra un mensaje o un loader.
   const { language } = useContext(LanguageContext);
-  // const [selectedMaintenance, setSelectedMaintenance] = useState(
-  //   cameraData[0].encoding.find((item) => item.subtype === "501")
-  // );
-  // const handleClick = (key) => {
-  //   setSelectedMaintenance(cameraData[0].encoding[key]);
-  // };
+  console.log(cameraData);
+  const [selectedMaintenance, setSelectedMaintenance] = useState(null);
+
+  useEffect(() => {
+    if (cameraData && cameraData.length > 0) {
+      setSelectedMaintenance(
+        cameraData.encoding.find((item) => item.subtype === "501")
+      );
+    }
+  }, [cameraData]);
+
+  // Si cameraData aún no está disponible, muestra un mensaje o un loader.
+  if (!cameraData || cameraData.length === 0) {
+    return <div>Loading...</div>;
+  }
+
+  const handleClick = (key) => {
+    setSelectedMaintenance(cameraData.encoding[key]);
+  };
   // Text Copy Button
-  // const handleCopyClick = () => {
-  //   navigator.clipboard.writeText(selectedMaintenance.text);
-  // };
+  const handleCopyClick = () => {
+    navigator.clipboard.writeText(selectedMaintenance.text);
+  };
 
   return (
     <div className="flex flex-col w-full">
@@ -73,27 +88,44 @@ const CameraDB = ({ cameraData }) => {
             </ol>
           </div>
         </div>
-        {/* Features Card */}
-        {/* <div className="h-max flex flex-col mx-4 my-2 w-fit">
 
-          <div className="bg-white dark:bg-transparent w-full border border-black border-opacity-30 dark:border-[#333] p-2 border-b-0 rounded-t-md flex flex-col justify-center items-start">
-
-            <span className="shadow-none inner_card bg-[#f6f8fa] dark:border-[#333] border-[1px] border-r-0 rounded-none p-0.5 px-1">
-              Mantenimiento:{" "}
+        {/* Maintenance Card */}
+        <div className="h-max flex flex-col mx-4 my-2 w-fit">
+          <div className="bg-white dark:bg-transparent w-full border border-black border-opacity-30 dark:border-[#333] p-2 border-b-0 rounded-t-md flex flex-row justify-center items-start">
+            <p>Mantenimiento:</p>
+            <span className="shadow-none inner_card bg-[#f6f8fa] dark:border-[#333] border-[1px] border-r-0 rounded-l-lg p-0.5 px-1">
+              {selectedMaintenance && selectedMaintenance.type}
+            </span>
+            <span className="shadow-none inner_card bg-[#f6f8fa] dark:border-[#333] border-[1px] rounded-r-lg p-0.5 px-1">
               {selectedMaintenance && selectedMaintenance.subtype}
             </span>
-            <span className="shadow-none inner_card bg-[#f6f8fa] dark:border-[#333] border-[1px] border-r-0 rounded-none p-0.5 px-1">
-              Tipo: {selectedMaintenance && selectedMaintenance.subtype}
-            </span>
           </div>
-
           <div className="bg-white dark:bg-transparent w-full border border-black border-opacity-30 h-[285px] dark:border-[#333] border-t-0 p-2 rounded-b-md flex flex-col justify-center items-start">
             <div className="w-fit h-full flex flex-col justify-center items-stretch gap-1 text-sm">
               Texto: {selectedMaintenance && selectedMaintenance.text}
             </div>
+            {/* Maintenances Buttons */}
+            <div className="flex flex-rowcoco">
+              {cameraData?.encoding.map((item, index) => (
+                <button
+                  key={index}
+                  className="w-fit dark:active:text-[#00d0ff] active:text-[#0072d3] active:font-bold hover:bg-[#8181812e] hover:transform hover:scale-106 flex flex-row items-center cursor-pointer border-t border-[#00000030] dark:border-[#333]"
+                  onClick={() => handleClick(index)}
+                >
+                  <div className="w-[12rem] text-sm p-0 m-0 flex flex-row justify-start">
+                    <h4 className="my-2">
+                      {language === "english"
+                        ? item.reason.english
+                        : item.reason.español}
+                    </h4>
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
-        </div> */}
+        </div>
       </div>
+
       {/* Process Card */}
       <div className="h-max flex flex-col w-fill_available mx-4 my-2">
         {/* top div */}
