@@ -22,6 +22,26 @@ const cameras = [
             description: "",
             icon: samsung6410,
             features: [],
+            encoding: [
+              {
+                reason: {
+                  english: "Not connecting to router",
+                  español: "No conecta con router",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Cámara no comunica correctamente con router, reconfigurar cámara correctamente de nuevo sin coste ni cargos gracias",
+              },
+              {
+                reason: {
+                  english: "The LED is not turning on",
+                  español: "No enciende LED",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Cámara no enciende led de estado, revisar cámara correctamente cambair de ser necesario, sin coste ni cargos gracias",
+              },
+            ],
           },
           {
             submodel: "6415",
@@ -29,6 +49,26 @@ const cameras = [
             description: "",
             icon: samsungN1,
             features: [],
+            encoding: [
+              {
+                reason: {
+                  english: "Not connecting to router",
+                  español: "No conecta con router",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Cámara no comunica correctamente con router, reconfigurar cámara correctamente de nuevo sin coste ni cargos gracias",
+              },
+              {
+                reason: {
+                  english: "The LED is not turning on",
+                  español: "No enciende LED",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Cámara no enciende led de estado, revisar cámara correctamente cambair de ser necesario, sin coste ni cargos gracias",
+              },
+            ],
           },
           {
             submodel: "6110",
@@ -36,6 +76,26 @@ const cameras = [
             description: "",
             icon: samsung6110,
             features: [],
+            encoding: [
+              {
+                reason: {
+                  english: "Not connecting to router",
+                  español: "No conecta con router",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Cámara no comunica correctamente con router, reconfigurar cámara correctamente de nuevo sin coste ni cargos gracias",
+              },
+              {
+                reason: {
+                  english: "The LED is not turning on",
+                  español: "No enciende LED",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Cámara no enciende led de estado, revisar cámara correctamente cambair de ser necesario, sin coste ni cargos gracias",
+              },
+            ],
           },
           {
             submodel: "6430",
@@ -43,6 +103,26 @@ const cameras = [
             description: "",
             icon: samsung6430,
             features: [],
+            encoding: [
+              {
+                reason: {
+                  english: "Not connecting to router",
+                  español: "No conecta con router",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Cámara no comunica correctamente con router, reconfigurar cámara correctamente de nuevo sin coste ni cargos gracias",
+              },
+              {
+                reason: {
+                  english: "The LED is not turning on",
+                  español: "No enciende LED",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Cámara no enciende led de estado, revisar cámara correctamente cambair de ser necesario, sin coste ni cargos gracias",
+              },
+            ],
           },
         ],
       },
@@ -222,48 +302,208 @@ const cameras = [
             name: "IcanView 100",
             description: "",
             features: [],
+            encoding: [
+              {
+                reason: {
+                  english: "Waiting for more information",
+                  español: "A la espera de mas datos",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+              {
+                reason: {
+                  english: "The LED is not turning on",
+                  español: "No enciende LED",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+            ],
           },
           {
             submodel: "110",
             name: "IcanView 100",
             description: "",
             features: [],
+            encoding: [
+              {
+                reason: {
+                  english: "Waiting for more information",
+                  español: "A la espera de mas datos",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+              {
+                reason: {
+                  english: "The LED is not turning on",
+                  español: "No enciende LED",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+            ],
           },
           {
             submodel: "Domo",
             name: "Domo",
             description: "",
             features: [],
+            encoding: [
+              {
+                reason: {
+                  english: "Waiting for more information",
+                  español: "A la espera de mas datos",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+              {
+                reason: {
+                  english: "The LED is not turning on",
+                  español: "No enciende LED",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+            ],
           },
           {
             submodel: "Vsc@m",
             name: "Vsc@m",
             description: "",
             features: [],
+            encoding: [
+              {
+                reason: {
+                  english: "Waiting for more information",
+                  español: "A la espera de mas datos",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+              {
+                reason: {
+                  english: "The LED is not turning on",
+                  español: "No enciende LED",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+            ],
           },
           {
             submodel: "Megapixel",
             name: "Megapixel",
             description: "",
             features: [],
+            encoding: [
+              {
+                reason: {
+                  english: "Waiting for more information",
+                  español: "A la espera de mas datos",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+              {
+                reason: {
+                  english: "The LED is not turning on",
+                  español: "No enciende LED",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+            ],
           },
           {
             submodel: "Slim",
             name: "Smart Cam Slim",
             description: "",
             features: [],
+            encoding: [
+              {
+                reason: {
+                  english: "Waiting for more information",
+                  español: "A la espera de mas datos",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+              {
+                reason: {
+                  english: "The LED is not turning on",
+                  español: "No enciende LED",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+            ],
           },
           {
             submodel: "Slim Night",
             name: "Slim Night",
             description: "",
             features: [],
+            encoding: [
+              {
+                reason: {
+                  english: "Waiting for more information",
+                  español: "A la espera de mas datos",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+              {
+                reason: {
+                  english: "The LED is not turning on",
+                  español: "No enciende LED",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+            ],
           },
           {
             submodel: "OutDoor",
             name: "OutDoor",
             description: "",
             features: [],
+            encoding: [
+              {
+                reason: {
+                  english: "Waiting for more information",
+                  español: "A la espera de mas datos",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+              {
+                reason: {
+                  english: "The LED is not turning on",
+                  español: "No enciende LED",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Waiting for more informatio",
+              },
+            ],
           },
         ],
       },

@@ -91,32 +91,34 @@ const CameraDB = ({ cameraData }) => {
 
         {/* Maintenance Card */}
         <div className="h-max flex flex-col mx-4 my-2 w-fit">
-          <div className="bg-white dark:bg-transparent w-full border border-black border-opacity-30 dark:border-[#333] p-2 border-b-0 rounded-t-md flex flex-row justify-center items-start">
-            <p>Mantenimiento:</p>
-            <span className="shadow-none inner_card bg-[#f6f8fa] dark:border-[#333] border-[1px] border-r-0 rounded-l-lg p-0.5 px-1">
-              {selectedMaintenance && selectedMaintenance.type}
-            </span>
-            <span className="shadow-none inner_card bg-[#f6f8fa] dark:border-[#333] border-[1px] rounded-r-lg p-0.5 px-1">
-              {selectedMaintenance && selectedMaintenance.subtype}
-            </span>
+          <div className="bg-white dark:bg-transparent w-full border border-black border-opacity-30 dark:border-[#333] p-2 border-b-0 rounded-t-md flex flex-row justify-between items-start">
+            <p>Mantenimientos:</p>
+            <div>
+              <span className="shadow-none inner_card bg-[#f6f8fa] dark:border-[#333] border-[1px] border-r-0 rounded-l-lg p-0.5 px-1">
+                {selectedMaintenance && selectedMaintenance.type}
+              </span>
+              <span className="shadow-none inner_card bg-[#f6f8fa] dark:border-[#333] border-[1px] rounded-r-lg p-0.5 px-1">
+                {selectedMaintenance && selectedMaintenance.subtype}
+              </span>
+            </div>
           </div>
           <div className="bg-white dark:bg-transparent w-full border border-black border-opacity-30 h-[285px] dark:border-[#333] border-t-0 p-2 rounded-b-md flex flex-col justify-center items-start">
-            <div className="w-fit h-full flex flex-col justify-center items-stretch gap-1 text-sm">
+            <div className="w-96 h-full flex flex-col justify-center items-stretch gap-1 text-sm mx-auto my-0">
               Texto: {selectedMaintenance && selectedMaintenance.text}
             </div>
             {/* Maintenances Buttons */}
-            <div className="flex flex-rowcoco">
+            <div className="flex flex-row justify-between items-center">
               {cameraData?.encoding.map((item, index) => (
                 <button
                   key={index}
-                  className="w-fit dark:active:text-[#00d0ff] active:text-[#0072d3] active:font-bold hover:bg-[#8181812e] hover:transform hover:scale-106 flex flex-row items-center cursor-pointer border-t border-[#00000030] dark:border-[#333]"
+                  className="w-[9rem] dark:active:text-[#00d0ff] active:text-[#0072d3] active:font-bold hover:bg-[#8181812e] hover:transform hover:scale-106 flex flex-row items-center cursor-pointer border-t border-[#00000030] dark:border-[#333]"
                   onClick={() => handleClick(index)}
                 >
-                  <div className="w-[12rem] text-sm p-0 m-0 flex flex-row justify-start">
-                    <h4 className="my-2">
+                  <div className="w-[9rem] h-[40px] text-sm flex flex-row justify-center items-center">
+                    <h4 className="">
                       {language === "english"
-                        ? item.reason.english
-                        : item.reason.español}
+                        ? item?.reason?.english
+                        : item?.reason?.español}
                     </h4>
                   </div>
                 </button>
