@@ -20,7 +20,7 @@ export default function Switcher() {
           checked={darkSide}
           onChange={toogleDarkMode}
           size={20}
-          color={'gray-100'}
+          color={"gray-100"}
         />
       </div>
     </>

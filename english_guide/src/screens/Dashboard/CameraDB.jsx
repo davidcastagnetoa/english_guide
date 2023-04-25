@@ -3,9 +3,38 @@ import { LanguageContext } from "../../components/context/LanguageContext";
 import ImageLoader from "../../assets/skeleton/ImageLoader";
 import TitleLoader from "../../assets/skeleton/TitleLoader";
 import TextLoader from "../../assets/skeleton/TextLoader";
-import { MdArrowForwardIos } from "react-icons/md";
+import { Text, Card, Spacer } from "@geist-ui/core";
 
 const CameraDB = ({ cameraData }) => {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const currentTheme = window.localStorage.getItem("theme");
+    if (currentTheme) {
+      setTheme(currentTheme);
+    }
+  }, []);
+
+  useEffect(() => {
+    const updateTheme = () => {
+      const htmlElement = document.documentElement;
+      if (htmlElement.classList.contains("dark")) {
+        setTheme("dark");
+      } else {
+        setTheme("light");
+      }
+    };
+
+    const observer = new MutationObserver(updateTheme);
+    const htmlElement = document.documentElement;
+
+    observer.observe(htmlElement, { attributes: true });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   // Si cameraData aún no está disponible, muestra un mensaje o un loader.
   const { language } = useContext(LanguageContext);
   console.log(cameraData);
@@ -48,10 +77,8 @@ const CameraDB = ({ cameraData }) => {
           )}
         </div>
         {/* Features Card */}
-        <div className="h-max flex flex-col mx-4 my-2 w-fit">
-          {/* top div */}
+        {/* <div className="h-max flex flex-col mx-4 my-2 w-fit">
           <div className="bg-white dark:bg-transparent w-full border border-black border-opacity-30 dark:border-[#333] p-2 border-b-0 rounded-t-md flex flex-col justify-center items-start">
-            {/* Title */}
             {cameraData?.name ? (
               <span className="font-semibold text-xl 4xl:text-2xl text-black dark:text-white">
                 Modelo: {cameraData?.name}
@@ -67,7 +94,6 @@ const CameraDB = ({ cameraData }) => {
               <TitleLoader className="rounded-lg" />
             )}
           </div>
-          {/* bottom div */}
           <div className="bg-white dark:bg-transparent w-full border border-black border-opacity-30 h-[285px] dark:border-[#333] border-t-0 p-2 rounded-b-md flex flex-col justify-center items-start">
             <ol className="w-fit h-full flex flex-col justify-center items-stretch gap-1 text-sm">
               {cameraData?.icon ? (
@@ -87,7 +113,54 @@ const CameraDB = ({ cameraData }) => {
               )}
             </ol>
           </div>
-        </div>
+        </div> */}
+
+        <Card
+          shadow
+          type="default"
+          width="286px"
+          style={{
+            background: theme === "light" ? "#fafafa" : "black",
+            color: theme === "light" ? "black" : "white",
+            border: theme === "light" ? "1px solid #eaeaea" : "1px solid #333",
+            width: "286px",
+          }}
+        >
+          {cameraData?.name ? (
+            <Text h4 my={0}>
+              Modelo: {cameraData?.name}
+            </Text>
+          ) : (
+            <TitleLoader className="rounded-lg" />
+          )}
+          {cameraData?.sbn_zone ? (
+            <Text h4 my={0}>
+              Designación SBN: {cameraData?.sbn_zone}
+            </Text>
+          ) : (
+            <TitleLoader className="rounded-lg" />
+          )}
+          <Spacer h={1} />
+          <Text p>
+            <ol className="w-fit h-full flex flex-col justify-center items-stretch gap-1 text-sm">
+              {cameraData?.icon ? (
+                cameraData?.features.map((Camfeature, index) => (
+                  <li
+                    value={Camfeature?.index}
+                    key={index}
+                    className="flex flex-row"
+                  >
+                    {language === "english"
+                      ? Camfeature?.english
+                      : Camfeature?.español}
+                  </li>
+                ))
+              ) : (
+                <TextLoader className="rounded-lg" />
+              )}
+            </ol>
+          </Text>
+        </Card>
 
         {/* Maintenance Card */}
         <div className="h-max flex flex-col mx-4 my-2 w-fit">
@@ -125,21 +198,6 @@ const CameraDB = ({ cameraData }) => {
               ))}
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Process Card */}
-      <div className="h-max flex flex-col w-fill_available mx-4 my-2">
-        {/* top div */}
-        <div className="w-full inner_card bg-[#f6f8fa] dark:border-[#333] p-2 border-[1px] border-b-0 rounded-t-lg flex flex-col justify-center items-center">
-          {/* Title */}
-          <span className="font-semibold text-xl 4xl:text-2xl text-black dark:text-white">
-            {language === "english" ? "Process" : "Procesos"}
-          </span>
-        </div>
-        {/* bottom div */}
-        <div className="w-full h-[285px] inner_card dark:bg-black dark:border-[#333] p-2 rounded-b-lg flex flex-col justify-center items-center">
-          <TextLoader className="rounded-lg" />
         </div>
       </div>
     </div>
