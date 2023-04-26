@@ -18,7 +18,7 @@ const HomeSection = ({ setShowCopiedAlert }) => {
 
   return (
     <>
-      <div className="grid grid-cols-4 grid-rows-2 justify-center items-center h-auto w-[70rem] gap-6 4xl:gap-8 mt-5 4x:mt-0 mx-auto maxminiteams:gap-2">
+      <div className="grid grid-cols-4 grid-rows-2 justify-center items-center h-auto w-[70rem] gap-4 4xl:gap-8 mt-5 4x:mt-0 mx-auto maxminiteams:gap-2">
         {/* Render the Skeleton component while components are loading */}
         {isLoading
           ? Array.from({ length: 8 }).map((_, index) => (
@@ -30,7 +30,7 @@ const HomeSection = ({ setShowCopiedAlert }) => {
                 className="flex flex-col justify-between items-center w-max my-0 mx-auto"
               >
                 {/* Card */}
-                <div className="card p-0 h-[19rem] maxminiteams:h-[18rem] dark:bg-[#151618]">
+                <div className="card p-0 h-[19rem] max3xl:h-fit maxminiteams:h-[18rem] dark:bg-[#151618]">
                   {/* Image Logo */}
                   <Link to={page.to}>
                     <img
@@ -39,7 +39,7 @@ const HomeSection = ({ setShowCopiedAlert }) => {
                       className="rounded-t-lg w-60 h-auto object-cover"
                     />
                   </Link>
-                  <div className="p-5 w-60 flex flex-col justify-between h-[10.5rem] maxminiteams:h-[9.25rem] maxminiteams:p-4">
+                  <div className="px-5 py-3 w-60 flex flex-col justify-between h-[10.5rem] max3xl:h-[9.5rem] maxminiteams:h-[9.25rem] maxminiteams:p-4">
                     <h5 className="mb-1 text-base font-bold tracking-tight text-gray-900 dark:text-white">
                       {page.title[language]}
                     </h5>

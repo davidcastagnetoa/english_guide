@@ -274,7 +274,7 @@ const RobberyScreen = () => {
                   </p>
                 </div>
                 {/* bottom div */}
-                <div className="h-[285px] max3xl:h-[16.5rem] maxminiteams:h-[15.5rem] maxminiteams:w-[30rem] inner_card dark:bg-black dark:border-[#333] p-2 rounded-b-lg flex flex-col justify-between items-center w-[36rem]">
+                <div className="h-[285px] max3xl:h-[15rem] maxminiteams:h-[15.5rem] maxminiteams:w-[30rem] inner_card dark:bg-black dark:border-[#333] p-2 rounded-b-lg flex flex-col justify-between items-center w-[36rem]">
                   {/* Subtitle */}
                   <div className="justify-between flex flex-row m-2 px-3 w-full items-center maxminiteams:text-[0.85rem]">
                     {language === "english"
@@ -294,7 +294,7 @@ const RobberyScreen = () => {
                     </div>
                   </div>
                   {/* Maintenance Text */}
-                  <p className="dark:text-[#7e7e7e] text-[#606060] text-[0.85rem] max3xl:text-[0.8rem] maxminiteams:text-[0.75rem] maxminiteams:m-1 maxminiteams:p-1.5 m-2 p-3 max3xl:p-2 border-dashed border border-[#30363d] rounded-md">
+                  <p className="dark:text-[#7e7e7e] text-[#606060] text-[0.85rem] max3xl:text-[0.725rem] maxminiteams:text-[0.75rem] maxminiteams:m-1 maxminiteams:p-1.5 m-2 p-3 max3xl:p-2 border-dashed border border-[#30363d] rounded-md">
                     {selectedMaintenance && selectedMaintenance.text}
                   </p>
                   <div className="flex flex-col items-center">
