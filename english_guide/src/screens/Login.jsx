@@ -9,8 +9,6 @@ import {
   Card,
   Input,
   Toggle,
-  Spacer,
-  Button,
   Modal,
   useModal,
   CssBaseline,
@@ -127,8 +125,6 @@ const Login = () => {
                   borderRadius: "1rem",
                 }}
               >
-                {/* Blur Effect */}
-                {/* <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10"></div> */}
                 {/* Login Card */}
                 {/* Dark/night toggle button */}
                 <Switcher />
@@ -142,8 +138,8 @@ const Login = () => {
                     </Text>
                   </span>
                 </div>
-                <div className="p-8 pb-6 text-center rounded-b-2xl">
-                  <div className="text-center text-slate-500 mb-1">
+                <div className="p-6 pb-4 text-center rounded-b-2xl">
+                  <div className="text-center dark:text-slate-300 text-slate-500 mb-2">
                     <small>
                       {language === "english"
                         ? "Log in with credentials"
@@ -181,16 +177,9 @@ const Login = () => {
                       />
                     </div>
                     {/* Remmeber me Toggle */}
-                    <div className="min-h-6 mb-0.5 block pl-12 text-left">
+                    <div className="min-h-6 mb-0.5 block text-left flex items-stretch justify-start">
                       <Toggle initialChecked onChange={handleCheckboxChange} />
-                      {/* <input
-                        id="rememberMe"
-                        className="mt-0.5 rounded-full duration-200 ease-in-out after:rounded-full after:shadow-2xl after:duration-200 checked:after:translate-x-5 h-5 relative float-left -ml-12 w-10 cursor-pointer appearance-none border border-solid border-gray-200 bg-slate-800/10 bg-none bg-contain bg-left bg-no-repeat align-top transition-all after:absolute after:top-px after:h-4 after:w-4 after:translate-x-px after:bg-white after:content-[''] checked:border-blue-500/95 checked:bg-blue-500/95 checked:bg-none checked:bg-right"
-                        type="checkbox"
-                        checked={rememberMe}
-                        onChange={handleCheckboxChange}
-                      /> */}
-                      <label className="ml-1 text-sm font-normal cursor-pointer select-none text-slate-700 dark:text-slate-400">
+                      <label className="ml-2 text-sm font-normal cursor-pointer select-none text-slate-700 dark:text-slate-400">
                         {language === "english"
                           ? "Remember me"
                           : "Recordar acceso"}

@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { LanguageContext } from "../../components/context/LanguageContext";
 import ImageLoader from "../../assets/skeleton/ImageLoader";
-import TitleLoader from "../../assets/skeleton/TitleLoader";
 import TextLoader from "../../assets/skeleton/TextLoader";
-import { Text, Card, Spacer, ButtonGroup, Button, useModal } from "@geist-ui/core";
+import { Text, Card, Spacer, ButtonGroup, Button } from "@geist-ui/core";
 
 const CameraDB = ({ cameraData }) => {
   //Theme colors
@@ -34,21 +33,22 @@ const CameraDB = ({ cameraData }) => {
       observer.disconnect();
     };
   }, []);
+
   // Language Context
   const { language } = useContext(LanguageContext);
   // Data debugger
   console.log(cameraData);
 
   //Maintenance Buttons
-  const [selectedMaintenance, setSelectedMaintenance] = useState(null);
+  const [selectedMaintenance, setSelectedMaintenance] = useState("");
   useEffect(() => {
-    if (cameraData && cameraData.length > 0) {
+    if (cameraData && cameraData.encoding) {
       setSelectedMaintenance(
-        cameraData.encoding.find((item) => item.subtype === "501")
+        cameraData.encoding.find((item) => item.subtype === "501") || cameraData.encoding[0]
       );
     }
   }, [cameraData]);
-
+  
   if (!cameraData || cameraData.length === 0) {
     return <div>Loading...</div>;
   }
@@ -62,8 +62,8 @@ const CameraDB = ({ cameraData }) => {
   };
 
   return (
-    <div className="flex flex-col w-full">
-      <div className="topside flex flex-row items-center w-full justify-start z-100">
+    <div className="flex flex-col w-full pr-5">
+      <div className="topside flex flex-row items-center w-full justify-between z-100 ">
         {/* Image Camera */}
         <div className="rounded-lg">
           {cameraData?.icon ? (
@@ -76,45 +76,6 @@ const CameraDB = ({ cameraData }) => {
             <ImageLoader className="p-2 rounded-[1.5rem]" />
           )}
         </div>
-        {/* Features Card */}
-        {/* <div className="h-max flex flex-col mx-4 my-2 w-fit">
-          <div className="bg-white dark:bg-transparent w-full border border-black border-opacity-30 dark:border-[#333] p-2 border-b-0 rounded-t-md flex flex-col justify-center items-start">
-            {cameraData?.name ? (
-              <span className="font-semibold text-xl 4xl:text-2xl text-black dark:text-white">
-                Modelo: {cameraData?.name}
-              </span>
-            ) : (
-              <TitleLoader className="rounded-lg" />
-            )}
-            {cameraData?.sbn_zone ? (
-              <span className="font-semibold text-xl 4xl:text-2xl text-black dark:text-white">
-                Designación SBN: {cameraData?.sbn_zone}
-              </span>
-            ) : (
-              <TitleLoader className="rounded-lg" />
-            )}
-          </div>
-          <div className="bg-white dark:bg-transparent w-full border border-black border-opacity-30 h-[285px] dark:border-[#333] border-t-0 p-2 rounded-b-md flex flex-col justify-center items-start">
-            <ol className="w-fit h-full flex flex-col justify-center items-stretch gap-1 text-sm">
-              {cameraData?.icon ? (
-                cameraData?.features.map((Camfeature, index) => (
-                  <li
-                    value={Camfeature?.index}
-                    key={index}
-                    className="flex flex-row"
-                  >
-                    {language === "english"
-                      ? Camfeature?.english
-                      : Camfeature?.español}
-                  </li>
-                ))
-              ) : (
-                <TextLoader className="rounded-lg" />
-              )}
-            </ol>
-          </div>
-        </div> */}
-
         <Card
           shadow
           type="default"
@@ -124,26 +85,30 @@ const CameraDB = ({ cameraData }) => {
             color: theme === "light" ? "black" : "white",
             border: theme === "light" ? "1px solid #eaeaea" : "1px solid #333",
             width: "max-content",
-            maxHeight: "fit-content",
+            height: "19.5rem"
           }}
         >
-          {cameraData?.name ? (
-            <Text h4 my={0}>
+            <Text
+              h4
+              my={0}
+              style={{
+                fontWeight: "bold"
+              }}
+            >
               Modelo: {cameraData?.name}
             </Text>
-          ) : (
-            <TitleLoader className="rounded-lg" />
-          )}
-          {cameraData?.sbn_zone ? (
-            <Text h4 my={0}>
+            <Text
+              h4
+              my={0}
+              style={{
+                fontWeight: "bold"
+              }}
+            >
               Designación SBN: {cameraData?.sbn_zone}
             </Text>
-          ) : (
-            <TitleLoader className="rounded-lg" />
-          )}
           <Spacer h={1} />
           <Text p>
-            <ol className="w-fit h-full flex flex-col justify-center items-stretch gap-1 text-sm max3xl:text-[0.78rem] max3xl:gap-0.5">
+            <ol className="w-fit h-full flex flex-col justify-center items-stretch gap-0.5 text-sm max3xl:text-[0.78rem] max3xl:gap-0.5">
               {cameraData?.icon ? (
                 cameraData?.features.map((Camfeature, index) => (
                   <li
@@ -162,53 +127,15 @@ const CameraDB = ({ cameraData }) => {
             </ol>
           </Text>
         </Card>
-
-        {/* Maintenance Card */}
-        {/* <div className="h-max flex flex-col mx-4 my-2 w-fit">
-          <div className="bg-white dark:bg-transparent w-full border border-black border-opacity-30 dark:border-[#333] p-2 border-b-0 rounded-t-md flex flex-row justify-between items-start">
-            <p>Mantenimientos:</p>
-            <div>
-              <span className="shadow-none inner_card bg-[#f6f8fa] dark:border-[#333] border-[1px] border-r-0 rounded-l-lg p-0.5 px-1">
-                {selectedMaintenance && selectedMaintenance.type}
-              </span>
-              <span className="shadow-none inner_card bg-[#f6f8fa] dark:border-[#333] border-[1px] rounded-r-lg p-0.5 px-1">
-                {selectedMaintenance && selectedMaintenance.subtype}
-              </span>
-            </div>
-          </div>
-          <div className="bg-white dark:bg-transparent w-full border border-black border-opacity-30 h-[285px] dark:border-[#333] border-t-0 p-2 rounded-b-md flex flex-col justify-center items-start">
-            <div className="w-96 h-full flex flex-col justify-center items-stretch gap-1 text-sm mx-auto my-0">
-              Texto: {selectedMaintenance && selectedMaintenance.text}
-            </div>
-            <div className="flex flex-row justify-between items-center">
-              {cameraData?.encoding.map((item, index) => (
-                <button
-                  key={index}
-                  className="w-[9rem] dark:active:text-[#00d0ff] active:text-[#0072d3] active:font-bold hover:bg-[#8181812e] hover:transform hover:scale-106 flex flex-row items-center cursor-pointer border-t border-[#00000030] dark:border-[#333]"
-                  onClick={() => handleClick(index)}
-                >
-                  <div className="w-[9rem] h-[40px] text-sm flex flex-row justify-center items-center">
-                    <h4 className="">
-                      {language === "english"
-                        ? item?.reason?.english
-                        : item?.reason?.español}
-                    </h4>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div> */}
         <Card
           shadow
           type="default"
+          width="20rem"
           style={{
             background: theme === "light" ? "#fafafa" : "black",
             color: theme === "light" ? "black" : "white",
             border: theme === "light" ? "1px solid #eaeaea" : "1px solid #333",
-            width: "max-content",
-            maxHeight: "fit-content",
-            maxWidth: "30rem",
+            height: "19.5rem",
           }}
         >
           <Card.Content>
@@ -249,19 +176,72 @@ const CameraDB = ({ cameraData }) => {
               </div>
             </div>
           </Card.Content>
+          <Card.Content height="calc(19.5rem - 58px)">
+            <div className="flex flex-col h-full justify-between">
+              <Text
+                p
+                font="1rem"
+              >
+                Texto: {selectedMaintenance && selectedMaintenance.text}
+              </Text>
+              <Button
+                width="30%"
+                auto
+                type="default"
+                style={{
+                  background: theme === "light" ? "black" : "white",
+                  color: theme === "light" ? "white" : "black"
+                }}
+                onClick={() => {
+                  handleCopyClick();
+                }}>
+                {language === "english" ? "Copy" : "Copiar"}
+              </Button>
+            </div>
+          </Card.Content>
+        </Card>
+        <Card shadow
+          type="dark"
+          height="19.5rem"
+          width="20rem"
+          style={{
+            background: theme === "light" ? "#fafafa" : "black",
+            color: theme === "light" ? "black" : "white",
+            border: theme === "light" ? "1px solid #eaeaea" : "1px solid #333",
+            Height: "19.5rem",
+          }}>
           <Card.Content>
-            <Text p>
-              Texto: {selectedMaintenance && selectedMaintenance.text}
+            <Text
+              h4
+              font="1rem"
+              style={{
+                fontWeight: "bold"
+              }}>
+              {language === "english" ? "Select the type of failure" : "Seleccione el tipo de averia"}
             </Text>
-            <ButtonGroup>
+            <Text p
+              font="0.8rem"
+            >
+              {language === "english" ? "Copy the text and open the corresponding maintenance." : "Copie el texto y abra el correspondiente mantenimiento"}
+            </Text>
+          </Card.Content>
+          <Card.Content height="calc(19.5rem - 94px)">
+            <ButtonGroup
+              vertical
+              scale={0.75}
+              type="success"
+              width="17.35rem"
+              style={{
+                background: theme === "light" ? "#fafafa" : "black",
+                color: theme === "light" ? "black" : "white",
+                border: theme === "light" ? "1px solid #eaeaea" : "1px solid #333",
+              }}>
               {cameraData?.encoding.map((item, index) => (
                 <Button
                   type="default"
                   key={index}
-                  // className="w-[9rem] dark:active:text-[#00d0ff] active:text-[#0072d3] active:font-bold hover:bg-[#8181812e] hover:transform hover:scale-106 flex flex-row items-center cursor-pointer border-t border-[#00000030] dark:border-[#333]"
                   onClick={() => handleClick(index)}
                 >
-                  {/* <div className="w-[9rem] h-[40px] text-sm flex flex-row justify-center items-center"> */}
                   <Text h4>
                     {language === "english"
                       ? item?.reason?.english

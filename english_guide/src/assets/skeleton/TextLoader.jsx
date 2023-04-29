@@ -26,12 +26,6 @@ const MyLoader = (props) => {
       <rect x="2" y="160" rx="3" ry="3" width="100%" height="15" />
       <rect x="2" y="180" rx="3" ry="3" width="98%" height="15" />
       <rect x="2" y="200" rx="3" ry="3" width="98%" height="15" />
-      <rect x="2" y="220" rx="3" ry="3" width="95%" height="15" />
-      <rect x="2" y="240" rx="3" ry="3" width="96%" height="15" />
-      <rect x="2" y="260" rx="3" ry="3" width="95%" height="15" />
-      <rect x="2" y="280" rx="3" ry="3" width="98%" height="15" />
-      <rect x="2" y="300" rx="3" ry="3" width="95%" height="15" />
-      <rect x="2" y="320" rx="3" ry="3" width="90%" height="15" />
     </ContentLoader>
   );
 };

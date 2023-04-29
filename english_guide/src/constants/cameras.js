@@ -285,7 +285,7 @@ const cameras = [
                 },
                 type: "1560",
                 subtype: "1564",
-                text: "Cámara bateria no carga se ha comprobado con cliente, cambair bateria reubicar o cambiar placa solar de ser necesario sin coste ni cargos gracias",
+                text: "Cámara bateria no carga se ha comprobado con cliente, cambiar bateria reubicar o cambiar placa solar de ser necesario sin coste ni cargos gracias",
               },
             ],
           },
