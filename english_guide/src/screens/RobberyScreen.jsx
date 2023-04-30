@@ -122,6 +122,18 @@ const RobberyScreen = () => {
       español:
         "7.- ¿Podría decirnos que ruta tomaron los intrusos para acceder?",
     },
+    {
+      english:
+        "8.- JUST CRA : Is anyone arrested?",
+      español:
+        "8.- SOLO CRA: ¿Hay detenidos?",
+    },
+    {
+      english:
+        "9.- JUST CRA : Has something been taken from your property?",
+      español:
+        "9.- SOLO CRA: ¿Se han llevado algo de su propiedad?",
+    },
   ];
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const handleNextClick = () => {

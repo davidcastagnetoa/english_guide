@@ -19,9 +19,40 @@ const cameras = [
           {
             submodel: "6410",
             name: "CloudCam Pro",
+            app: "My Verisure",
+            sbn_zone: "VI SNH-C6410BN",
             description: "",
             icon: samsung6410,
-            features: [],
+            features: [
+              {
+                english: "128 degrees Wide viewing angle",
+                español: "Angulo de visión 128º",
+              },
+              {
+                english: "Connection to power supply network required",
+                español: "Conexion a la corriente electrica necesaria",
+              },
+              {
+                english: "Ethernet and Wifi Connection",
+                español: "Conexión por Ethernet y Wifi",
+              },
+              {
+                english: "Maximum memory card capacity of 64GB",
+                español: "Tarjeta memoria maximo 64GB",
+              },
+              {
+                english: "Cloud storage for 3 days, with a maximum capacity of 8 hours",
+                español: "Almacenamiento en nube durante 3 días, 8 horas de capacidad",
+              },
+              {
+                english: "Continuous and event-based recording",
+                español: "Grabación contínua y por eventos",
+              },
+              {
+                english: "Two-way Audio (Half-duplex)",
+                español: "Audio bidireccional (Half-duplex)",
+              },
+            ],
             encoding: [
               {
                 reason: {
@@ -46,6 +77,8 @@ const cameras = [
           {
             submodel: "6415",
             name: "CloudCam N1",
+            app: "My Verisure",
+            sbn_zone: "VI SNH-C6415BN",
             description: "",
             icon: samsungN1,
             features: [],
@@ -73,9 +106,28 @@ const cameras = [
           {
             submodel: "6110",
             name: "CloudCam Mini",
+            app: "My Verisure",
+            sbn_zone: "VI SNH-C6110BN",
             description: "",
             icon: samsung6110,
-            features: [],
+            features: [
+              {
+                english: "130 degrees Wide viewing angle",
+                español: "Grabacion Full HD",
+              },
+              {
+                english: "Connection to power supply network.",
+                español: "Grabacion en la Nube",
+              },
+              {
+                english: "Built-in Spotlight",
+                español: "Grabación continua o oor eventos",
+              },
+              {
+                english: "Only internals zones ",
+                español: "Necesita 1 Mb de subida por cámara",
+              },
+            ],
             encoding: [
               {
                 reason: {
@@ -100,7 +152,14 @@ const cameras = [
           {
             submodel: "6430",
             name: "CloudCam Pro External",
-            description: "",
+            app: "My Verisure",
+            sbn_zone: "VI SNH-C6430BN",
+            description: {
+              english:
+                "Video camera with motion detection and audio alert system. Power supply required.",
+              español:
+                "Videocamara con sistema de alertas de detección de movimiento y audio. Requiere suministro electrico",
+            },
             icon: samsung6430,
             features: [],
             encoding: [
@@ -135,6 +194,7 @@ const cameras = [
           {
             submodel: "Indoor",
             name: "Essential Indoor",
+            app: "Arlo Secure",
             sbn_zone: "2040A",
             description: {
               english:
@@ -209,6 +269,7 @@ const cameras = [
           {
             submodel: "Spotlight",
             name: "Essential Spotlight",
+            app: "Arlo Secure",
             sbn_zone: "2030B",
             description: {
               english:
@@ -300,6 +361,7 @@ const cameras = [
           {
             submodel: "100",
             name: "IcanView 100",
+            app: "My Verisure",
             description: "",
             features: [],
             encoding: [
@@ -326,6 +388,7 @@ const cameras = [
           {
             submodel: "110",
             name: "IcanView 100",
+            app: "My Verisure",
             description: "",
             features: [],
             encoding: [
@@ -352,6 +415,7 @@ const cameras = [
           {
             submodel: "Domo",
             name: "Domo",
+            app: "My Verisure",
             description: "",
             features: [],
             encoding: [
@@ -378,6 +442,7 @@ const cameras = [
           {
             submodel: "Vsc@m",
             name: "Vsc@m",
+            app: "My Verisure",
             description: "",
             features: [],
             encoding: [
@@ -404,6 +469,7 @@ const cameras = [
           {
             submodel: "Megapixel",
             name: "Megapixel",
+            app: "My Verisure",
             description: "",
             features: [],
             encoding: [
@@ -430,6 +496,7 @@ const cameras = [
           {
             submodel: "Slim",
             name: "Smart Cam Slim",
+            app: "My Verisure",
             description: "",
             features: [],
             encoding: [
@@ -456,6 +523,7 @@ const cameras = [
           {
             submodel: "Slim Night",
             name: "Slim Night",
+            app: "My Verisure",
             description: "",
             features: [],
             encoding: [
@@ -482,6 +550,7 @@ const cameras = [
           {
             submodel: "OutDoor",
             name: "OutDoor",
+            app: "My Verisure",
             description: "",
             features: [],
             encoding: [

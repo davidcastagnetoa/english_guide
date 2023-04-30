@@ -84,7 +84,7 @@ const CameraDB = ({ cameraData }) => {
             background: theme === "light" ? "#fafafa" : "black",
             color: theme === "light" ? "black" : "white",
             border: theme === "light" ? "1px solid #eaeaea" : "1px solid #333",
-            width: "max-content",
+            minWidth: "18rem",
             height: "19.5rem"
           }}
         >
