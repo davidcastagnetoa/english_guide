@@ -62,29 +62,30 @@ const CameraDB = ({ cameraData }) => {
   };
 
   return (
-    <div className="flex flex-col w-full pr-5">
-      <div className="topside flex flex-row items-center w-full justify-between z-100 ">
+    <div className="flex flex-col justify-start w-[60%] pr-5 z-100">
+      <div className="topside flex flex-row items-center w-full h-[50%] justify-between gap-1">
         {/* Image Camera */}
         <div className="rounded-lg">
           {cameraData?.icon ? (
             <img
               src={cameraData.icon}
               alt={cameraData.name}
-              className="h-96 w-[418px] max-w-[418px] object-contain p-6 max3xl:max-w-[300px] max3xl:w-[300px] max3xl:h-fit"
+              className="h-96 w-[418px] max-w-[418px] object-contain p-6 max3xl:max-w-[300px] max3xl:w-[300px] max3xl:h-fit maxminiteams:w-[250px]"
             />
           ) : (
             <ImageLoader className="p-2 rounded-[1.5rem]" />
           )}
         </div>
+        {/* Info Data Camera */}
         <Card
           shadow
           type="default"
-          width="286px"
+          width="50%"
           style={{
             background: theme === "light" ? "#fafafa" : "black",
             color: theme === "light" ? "black" : "white",
             border: theme === "light" ? "1px solid #eaeaea" : "1px solid #333",
-            minWidth: "18rem",
+            // minWidth: "16rem",
             height: "19.5rem"
           }}
         >
@@ -106,7 +107,7 @@ const CameraDB = ({ cameraData }) => {
             >
               Designación SBN: {cameraData?.sbn_zone}
             </Text>
-          <Spacer h={1} />
+          <Spacer h={0.5} />
           <Text p>
             <ol className="w-fit h-full flex flex-col justify-center items-stretch gap-0.5 text-sm max3xl:text-[0.78rem] max3xl:gap-0.5">
               {cameraData?.icon ? (
@@ -127,10 +128,13 @@ const CameraDB = ({ cameraData }) => {
             </ol>
           </Text>
         </Card>
+      </div>
+      <div className="bottomside flex flex-row items-center w-full h-[50%] justify-between gap-1">
+        {/* Maintenances Camera Card */}
         <Card
           shadow
           type="default"
-          width="20rem"
+          width="50%"
           style={{
             background: theme === "light" ? "#fafafa" : "black",
             color: theme === "light" ? "black" : "white",
@@ -200,10 +204,11 @@ const CameraDB = ({ cameraData }) => {
             </div>
           </Card.Content>
         </Card>
+        {/* Select Maintenances Card */}
         <Card shadow
           type="dark"
           height="19.5rem"
-          width="20rem"
+          width="50%"
           style={{
             background: theme === "light" ? "#fafafa" : "black",
             color: theme === "light" ? "black" : "white",
@@ -229,8 +234,8 @@ const CameraDB = ({ cameraData }) => {
             <ButtonGroup
               vertical
               scale={0.75}
-              type="success"
-              width="17.35rem"
+              type="default"
+              width="100%"
               style={{
                 background: theme === "light" ? "#fafafa" : "black",
                 color: theme === "light" ? "black" : "white",
@@ -240,6 +245,10 @@ const CameraDB = ({ cameraData }) => {
                 <Button
                   type="default"
                   key={index}
+                  style={{
+                    background: theme === "light" ? "black" : "white",
+                    color: theme === "light" ? "white" : "black"
+                  }}
                   onClick={() => handleClick(index)}
                 >
                   <Text h4>

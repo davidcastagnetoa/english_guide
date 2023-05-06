@@ -160,7 +160,7 @@ const RobberyScreen = () => {
             {maintenances[0].encoding.map((item, index) => (
               <button
                 key={index}
-                className="w-[220px] dark:active:text-[#00d0ff] active:text-[#0072d3] active:font-bold hover:bg-[#8181812e] hover:transform hover:scale-106 flex flex-row items-center cursor-pointer border-t border-[#00000030] dark:border-[#333]"
+                className="w-[220px] maxminiteams:w-[185px] dark:active:text-[#00d0ff] active:text-[#0072d3] active:font-bold hover:bg-[#8181812e] hover:transform hover:scale-106 flex flex-row items-center cursor-pointer border-t border-[#00000030] dark:border-[#333]"
                 onClick={() => handleClick(index)}
               >
                 <MdArrowForwardIos />

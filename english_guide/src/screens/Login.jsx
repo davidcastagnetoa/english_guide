@@ -30,7 +30,7 @@ const Login = () => {
     // Verify credencials
     if (username === "TIRIRI" && password === "rocilito") {
       // Store the credencials in localStorage if "remember me" toogle is activated
-      if (rememberMe) {
+      if (rememberMe === true) {
         localStorage.setItem("TIRIRI", username);
         localStorage.setItem("rocilito", password);
         localStorage.setItem("rememberMe", true);
@@ -42,7 +42,6 @@ const Login = () => {
     } else {
       localStorage.clear();
       setVisible(true);
-      // setShowAlert(true);
     }
   };
 
@@ -178,7 +177,10 @@ const Login = () => {
                     </div>
                     {/* Remmeber me Toggle */}
                     <div className="min-h-6 mb-0.5 block text-left flex items-stretch justify-start">
-                      <Toggle initialChecked onChange={handleCheckboxChange} />
+                      {/* <input type="checkbox" onChange={handleCheckboxChange} checked={rememberMe} className="w-[1rem] h-[1rem]"/> */}
+                      <Toggle onChange={handleCheckboxChange} checked={rememberMe} ></Toggle>
+
+
                       <label className="ml-2 text-sm font-normal cursor-pointer select-none text-slate-700 dark:text-slate-400">
                         {language === "english"
                           ? "Remember me"

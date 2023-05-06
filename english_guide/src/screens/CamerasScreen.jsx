@@ -44,7 +44,7 @@ const CamerasScreen = () => {
             {cameras[0].models.map((item, index) => (
               <div key={index}>
                 <button
-                  className="w-[220px] dark:active:text-[#00d0ff] active:text-[#0072d3] active:font-bold hover:bg-[#8181812e] hover:transform hover:scale-106 flex flex-row items-center cursor-pointer border-t border-[#00000030] dark:border-[#333]"
+                  className="w-[220px] maxminiteams:w-[185px] dark:active:text-[#00d0ff] active:text-[#0072d3] active:font-bold hover:bg-[#8181812e] hover:transform hover:scale-106 flex flex-row items-center cursor-pointer border-t border-[#00000030] dark:border-[#333]"
                   onClick={() => toggleMenu(index)}
                 >
                   <MdArrowForwardIos />
@@ -81,7 +81,7 @@ const CamerasScreen = () => {
         </div>
       </div>
       {/* Right Side */}
-      <div className="w-full flex 4xl:flex-col flex-row justify-evenly">
+      <div className="w-full flex 4xl:flex-col flex-row justify-start">
         {/* Green Top Patron */}
         <div class="absolute inset-0 z-0 mx-0 max-w-none overflow-hidden">
           <div class="absolute left-1/2 top-0 ml-[-38rem] h-[25rem] w-[81.25rem] dark:[mask-image:linear-gradient(white,transparent)]">
@@ -143,6 +143,7 @@ const CamerasScreen = () => {
           </div>
         </div>
         <CameraDB cameraData={selectedCamara} />
+
       </div>
     </div>
   );

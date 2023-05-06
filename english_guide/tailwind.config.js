@@ -54,6 +54,9 @@ module.exports = {
       // => @media (max-width: 1170px) { ... }
     },
     extend: {
+      backgroundImage: {
+        'movil': "url('/src/assets/images/movil.webp')",
+      },
       fontFamily: {
         'titillium': ['Titillium Web', 'sans-serif']
       },

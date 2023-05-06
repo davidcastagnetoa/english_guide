@@ -12,6 +12,7 @@ import samsung6410 from "./samsung_6410.png";
 import samsung6430 from "./samsung_6430.png";
 import arloIndoor from "./arloIndoor.png";
 import arloSpotlight from "./arloSpotlight.png";
+import movil from "./movil.webp"
 
 export {
   burglared,
@@ -28,4 +29,5 @@ export {
   samsung6430,
   arloIndoor,
   arloSpotlight,
+  movil
 };
