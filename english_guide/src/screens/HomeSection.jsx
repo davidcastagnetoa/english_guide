@@ -4,7 +4,7 @@ import { pages } from "../constants/index";
 import { Link } from "react-router-dom";
 import { IoMdCopy } from "react-icons/io";
 import HomeLoader from "../assets/skeleton/HomeLoader";
-import BackgroundPatron from "../components/BackgroundPatron.jsx"
+import BackgroundPatron from "../components/BackgroundPatron.jsx";
 
 const HomeSection = ({ setShowCopiedAlert }) => {
   const { language } = useContext(LanguageContext);

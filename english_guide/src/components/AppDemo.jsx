@@ -14,7 +14,7 @@ const AppDemo = () => {
                         borderRadius: "20px 20px 30px 30px",
                         zIndex: "1",
                     }}
-                    data-src="https://www.securitasdirect.es/lp/app_verisure/menu-mas.php" src="https://www.securitasdirect.es/lp/app_verisure/menu-mas.php" data-loaded="true">
+                    data-src="https://www.securitasdirect.es/lp/app_verisure/videovigilancia.php" src="https://www.securitasdirect.es/lp/app_verisure/videovigilancia.php" data-loaded="true">
                 </iframe>
             </div>
         </div >
