@@ -2,11 +2,8 @@ import React from 'react'
 
 const AppDemo = () => {
     return (
-        <div>
+        <div className='flex items-center content-center'>
             <div className="bg-contain bg-center bg-no-repeat w-[355px] h-[710px] shrink-0 relative bg-movil">
-                <div className="demo-cover fade-out">
-                    <p>Pulsa o desliza <span>para navegar</span></p>
-                </div>
                 <iframe frameborder="0"
                     style={{
                         position: "absolute",
@@ -17,7 +14,7 @@ const AppDemo = () => {
                         borderRadius: "20px 20px 30px 30px",
                         zIndex: "1",
                     }}
-                    data-src="https://www.securitasdirect.es/lp/app_verisure/home.php" src="https://www.securitasdirect.es/lp/app_verisure/home.php" data-loaded="true">
+                    data-src="https://www.securitasdirect.es/lp/app_verisure/menu-mas.php" src="https://www.securitasdirect.es/lp/app_verisure/menu-mas.php" data-loaded="true">
                 </iframe>
             </div>
         </div >

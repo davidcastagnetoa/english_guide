@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LanguageContext } from "../components/context/LanguageContext";
 import Switcher from "../components/Switcher";
+import BackgroundPatron from "../components/BackgroundPatron.jsx"
 import { FaUserTie, FaLock } from "react-icons/fa";
 import {
   Text,
@@ -102,6 +103,8 @@ const Login = () => {
         className="dark:bg-black bg-gray-50 text-slate-900 dark:text-white h-screen flex flex-col justify-center"
       >
         <div className="flex flex-wrap justify-center ">
+          {/* Green Top Patron */}
+          <BackgroundPatron />
           <div className="px-6 mx-auto flex-0">
             {/* Card with Shadow */}
             <div className="relative">
@@ -178,8 +181,10 @@ const Login = () => {
                     {/* Remmeber me Toggle */}
                     <div className="min-h-6 mb-0.5 block text-left flex items-stretch justify-start">
                       {/* <input type="checkbox" onChange={handleCheckboxChange} checked={rememberMe} className="w-[1rem] h-[1rem]"/> */}
-                      <Toggle onChange={handleCheckboxChange} checked={rememberMe} ></Toggle>
-
+                      <Toggle
+                        onChange={handleCheckboxChange}
+                        checked={rememberMe}
+                      ></Toggle>
 
                       <label className="ml-2 text-sm font-normal cursor-pointer select-none text-slate-700 dark:text-slate-400">
                         {language === "english"

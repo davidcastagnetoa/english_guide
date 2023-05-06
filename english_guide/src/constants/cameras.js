@@ -17,6 +17,40 @@ const cameras = [
         },
         submodels: [
           {
+            submodel: "6430",
+            name: "CloudCam Pro External",
+            app: "My Verisure",
+            sbn_zone: "VI SNH-C6430BN",
+            description: {
+              english:
+                "Video camera with motion detection and audio alert system. Power supply required.",
+              español:
+                "Videocamara con sistema de alertas de detección de movimiento y audio. Requiere suministro electrico",
+            },
+            icon: samsung6430,
+            features: [],
+            encoding: [
+              {
+                reason: {
+                  english: "Not connecting to router",
+                  español: "No conecta con router",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Cámara no comunica correctamente con router, reconfigurar cámara correctamente de nuevo sin coste ni cargos gracias",
+              },
+              {
+                reason: {
+                  english: "The LED is not turning on",
+                  español: "No enciende LED",
+                },
+                type: "1550",
+                subtype: "1551",
+                text: "Cámara no enciende led de estado, revisar cámara correctamente cambair de ser necesario, sin coste ni cargos gracias",
+              },
+            ],
+          },
+          {
             submodel: "6410",
             name: "CloudCam Pro",
             app: "My Verisure",
@@ -41,8 +75,10 @@ const cameras = [
                 español: "Tarjeta memoria maximo 64GB",
               },
               {
-                english: "Cloud storage for 3 days, with a maximum capacity of 8 hours",
-                español: "Almacenamiento en nube durante 3 días, 8 horas de capacidad",
+                english:
+                  "Cloud storage for 3 days, with a maximum capacity of 8 hours",
+                español:
+                  "Almacenamiento en nube durante 3 días, 8 horas de capacidad",
               },
               {
                 english: "Continuous and event-based recording",
@@ -128,40 +164,6 @@ const cameras = [
                 español: "Necesita 1 Mb de subida por cámara",
               },
             ],
-            encoding: [
-              {
-                reason: {
-                  english: "Not connecting to router",
-                  español: "No conecta con router",
-                },
-                type: "1550",
-                subtype: "1551",
-                text: "Cámara no comunica correctamente con router, reconfigurar cámara correctamente de nuevo sin coste ni cargos gracias",
-              },
-              {
-                reason: {
-                  english: "The LED is not turning on",
-                  español: "No enciende LED",
-                },
-                type: "1550",
-                subtype: "1551",
-                text: "Cámara no enciende led de estado, revisar cámara correctamente cambair de ser necesario, sin coste ni cargos gracias",
-              },
-            ],
-          },
-          {
-            submodel: "6430",
-            name: "CloudCam Pro External",
-            app: "My Verisure",
-            sbn_zone: "VI SNH-C6430BN",
-            description: {
-              english:
-                "Video camera with motion detection and audio alert system. Power supply required.",
-              español:
-                "Videocamara con sistema de alertas de detección de movimiento y audio. Requiere suministro electrico",
-            },
-            icon: samsung6430,
-            features: [],
             encoding: [
               {
                 reason: {

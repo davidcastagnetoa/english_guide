@@ -4,6 +4,7 @@ import { pages } from "../constants/index";
 import { Link } from "react-router-dom";
 import { IoMdCopy } from "react-icons/io";
 import HomeLoader from "../assets/skeleton/HomeLoader";
+import BackgroundPatron from "../components/BackgroundPatron.jsx"
 
 const HomeSection = ({ setShowCopiedAlert }) => {
   const { language } = useContext(LanguageContext);
@@ -19,6 +20,8 @@ const HomeSection = ({ setShowCopiedAlert }) => {
   return (
     <>
       <div className="grid grid-cols-4 grid-rows-2 justify-center items-center h-auto w-[70rem] gap-4 4xl:gap-8 mt-5 4x:mt-0 mx-auto maxminiteams:gap-2">
+        {/* Green Top Patron */}
+        <BackgroundPatron />
         {/* Render the Skeleton component while components are loading */}
         {isLoading
           ? Array.from({ length: 8 }).map((_, index) => (

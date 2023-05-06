@@ -3,6 +3,7 @@ import { LanguageContext } from "../../components/context/LanguageContext";
 import ImageLoader from "../../assets/skeleton/ImageLoader";
 import TextLoader from "../../assets/skeleton/TextLoader";
 import { Text, Card, Spacer, ButtonGroup, Button } from "@geist-ui/core";
+import BackgroundPatron from "../../components/BackgroundPatron.jsx"
 
 const CameraDB = ({ cameraData }) => {
   //Theme colors
