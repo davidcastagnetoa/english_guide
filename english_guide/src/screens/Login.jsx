@@ -74,10 +74,10 @@ const Login = () => {
   useEffect(() => {
     const updateTheme = () => {
       const htmlElement = document.documentElement;
-      if (htmlElement.classList.contains("light")) {
-        setTheme("light");
-      } else {
+      if (htmlElement.classList.contains("dark")) {
         setTheme("dark");
+      } else {
+        setTheme("light");
       }
     };
 
