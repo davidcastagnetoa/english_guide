@@ -5,7 +5,6 @@ import { IoMdSearch } from "react-icons/io";
 import Switcher from "./Switcher";
 import DropdownMenu from "./DropdownMenu";
 import { LanguageContext } from "./context/LanguageContext";
-import { Input } from "@vercel/examples-ui";
 
 const Header = (props) => {
   const { searchTerm, setSearchTerm } = props;

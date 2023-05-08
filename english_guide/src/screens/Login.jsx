@@ -63,7 +63,7 @@ const Login = () => {
   }, []);
 
   //Theme colors
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
   useEffect(() => {
     const currentTheme = window.localStorage.getItem("theme");
     if (currentTheme) {
@@ -74,10 +74,10 @@ const Login = () => {
   useEffect(() => {
     const updateTheme = () => {
       const htmlElement = document.documentElement;
-      if (htmlElement.classList.contains("dark")) {
-        setTheme("dark");
-      } else {
+      if (htmlElement.classList.contains("light")) {
         setTheme("light");
+      } else {
+        setTheme("dark");
       }
     };
 
