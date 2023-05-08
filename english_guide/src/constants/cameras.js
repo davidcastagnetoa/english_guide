@@ -28,7 +28,36 @@ const cameras = [
                 "Videocamara con sistema de alertas de detección de movimiento y audio. Requiere suministro electrico",
             },
             icon: samsung6430,
-            features: [],
+            features: [
+              {
+                english: "130 degrees Wide viewing angle",
+                español: "Angulo de visión 130º",
+              },
+              {
+                english: "Connection to power supply network required",
+                español: "Conexion a la corriente electrica necesaria",
+              },
+              {
+                english: "Ethernet and Wifi Connection",
+                español: "Conexión por Ethernet y Wifi",
+              },
+              {
+                english: "Maximum memory card capacity of 128GB",
+                español: "Tarjeta memoria maximo 128GB",
+              },
+              {
+                english: "Cloud storage for 3 days, with a maximum capacity of 8 hours",
+                español: "Almacenamiento en nube durante 3 días, 8 horas de capacidad",
+              },
+              {
+                english: "Continuous and event-based recording",
+                español: "Grabación contínua y por eventos",
+              },
+              {
+                english: "Microphone included, doesn't have a speaker",
+                español: "Microfono incluido, No tiene Altavoz",
+              },
+            ],
             encoding: [
               {
                 reason: {
@@ -75,10 +104,8 @@ const cameras = [
                 español: "Tarjeta memoria maximo 64GB",
               },
               {
-                english:
-                  "Cloud storage for 3 days, with a maximum capacity of 8 hours",
-                español:
-                  "Almacenamiento en nube durante 3 días, 8 horas de capacidad",
+                english: "Cloud storage for 3 days, with a maximum capacity of 8 hours",
+                español: "Almacenamiento en nube durante 3 días, 8 horas de capacidad",
               },
               {
                 english: "Continuous and event-based recording",
@@ -117,7 +144,40 @@ const cameras = [
             sbn_zone: "VI SNH-C6415BN",
             description: "",
             icon: samsungN1,
-            features: [],
+            features: [
+              {
+                english: "128 degrees Wide viewing angle",
+                español: "Angulo de visión 128º",
+              },
+              {
+                english: "Connection to power supply network required",
+                español: "Conexion a la corriente electrica necesaria",
+              },
+              {
+                english: "Only Wifi Connection",
+                español: "Solo Conexión Wifi",
+              },
+              {
+                english: "Maximum memory card capacity of 128GB",
+                español: "Tarjeta memoria maximo 128GB",
+              },
+              {
+                english: "Cloud storage for 3 days, with a maximum capacity of 8 hours",
+                español: "Almacenamiento en nube durante 3 días, 8 horas de capacidad",
+              },
+              {
+                english: "Continuous and event-based recording",
+                español: "Grabación contínua y por eventos",
+              },
+              {
+                english: "Two-way Audio (Full-duplex)",
+                español: "Audio bidireccional (Full-duplex)",
+              },
+              {
+                english: "Require Bluetooth for installation",
+                español: "Requiere Bluetooth par su instalación",
+              },
+            ],
             encoding: [
               {
                 reason: {
@@ -149,19 +209,19 @@ const cameras = [
             features: [
               {
                 english: "130 degrees Wide viewing angle",
-                español: "Grabacion Full HD",
+                español: "",
               },
               {
-                english: "Connection to power supply network.",
-                español: "Grabacion en la Nube",
+                english: "",
+                español: "",
               },
               {
-                english: "Built-in Spotlight",
-                español: "Grabación continua o oor eventos",
+                english: "",
+                español: "s",
               },
               {
-                english: "Only internals zones ",
-                español: "Necesita 1 Mb de subida por cámara",
+                english: "",
+                español: "",
               },
             ],
             encoding: [
