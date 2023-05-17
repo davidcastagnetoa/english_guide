@@ -48,7 +48,7 @@ const CameraDB = ({ cameraData }) => {
       );
     }
   }, [cameraData]);
-  
+
   if (!cameraData || cameraData.length === 0) {
     return <div>Loading...</div>;
   }
@@ -89,24 +89,24 @@ const CameraDB = ({ cameraData }) => {
             height: "19.5rem"
           }}
         >
-            <Text
-              h4
-              my={0}
-              style={{
-                fontWeight: "bold"
-              }}
-            >
-              Modelo: {cameraData?.name}
-            </Text>
-            <Text
-              h4
-              my={0}
-              style={{
-                fontWeight: "bold"
-              }}
-            >
-              Designación SBN: {cameraData?.sbn_zone}
-            </Text>
+          <Text
+            h4
+            my={0}
+            style={{
+              fontWeight: "bold"
+            }}
+          >
+            Modelo: {cameraData?.name}
+          </Text>
+          <Text
+            h4
+            my={0}
+            style={{
+              fontWeight: "bold"
+            }}
+          >
+            Designación SBN: {cameraData?.sbn_zone}
+          </Text>
           <Spacer h={0.5} />
           <Text p>
             <ol className="w-fit h-full flex flex-col justify-center items-stretch gap-0.5 text-sm max3xl:text-[0.78rem] max3xl:gap-0.5">
@@ -182,19 +182,22 @@ const CameraDB = ({ cameraData }) => {
           </Card.Content>
           <Card.Content height="calc(19.5rem - 58px)">
             <div className="flex flex-col h-full justify-between">
-              <Text
-                p
-                font="1rem"
-              >
-                Texto: {selectedMaintenance && selectedMaintenance.text}
-              </Text>
+              <div className="border-dashed border border-[#30363d] rounded-md maxminiteams:m-1 maxminiteams:p-1.5 max3xl:p-2 m-auto p-3">
+
+                <Text
+                  p
+                  font="1rem"
+                >
+                  Texto: {selectedMaintenance && selectedMaintenance.text}
+                </Text>
+              </div>
               <Button
                 width="30%"
                 auto
                 type="default"
                 style={{
                   background: theme === "light" ? "black" : "white",
-                  color: theme === "light" ? "white" : "black"
+                  color: theme === "light" ? "white" : "black",
                 }}
                 onClick={() => {
                   handleCopyClick();

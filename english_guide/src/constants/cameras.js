@@ -326,6 +326,15 @@ const cameras = [
                 subtype: "1562",
                 text: "Error en email de cuenta de arlo del cliente , corregir y revalidar camara a mail que indique cliente gracias",
               },
+              {
+                reason: {
+                  english: "Arlo cameras removes from zones",
+                  español: "Camaras arlo eliminadas de zonas",
+                },
+                type: "1560",
+                subtype: "1562",
+                text: "Camaras arlo eliminadas de zonas, regrabar camaras en zonas y reconfigurar a mail que indique cliente gracias",
+              },
             ],
           },
           {
@@ -409,6 +418,15 @@ const cameras = [
                 type: "1560",
                 subtype: "1564",
                 text: "Cámara bateria no carga se ha comprobado con cliente, cambiar bateria reubicar o cambiar placa solar de ser necesario sin coste ni cargos gracias",
+              },
+              {
+                reason: {
+                  english: "Arlo cameras removes from zones",
+                  español: "Camaras arlo eliminadas de zonas",
+                },
+                type: "1560",
+                subtype: "1562",
+                text: "Camaras arlo eliminadas de zonas, regrabar camaras en zonas y reconfigurar a mail que indique cliente gracias",
               },
             ],
           },

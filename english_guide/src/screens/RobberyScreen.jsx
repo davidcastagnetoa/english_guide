@@ -7,6 +7,7 @@ import { TbCopy } from "react-icons/tb";
 import ReactCanvasConfetti from "react-canvas-confetti";
 import { maintenances } from "../constants/maintenances";
 import BackgroundPatron from "../components/BackgroundPatron";
+import { Modal, useModal } from "@geist-ui/core";
 
 const RobberyScreen = () => {
   const { language } = useContext(LanguageContext);
@@ -21,6 +22,7 @@ const RobberyScreen = () => {
   const [selectedMaintenance, setSelectedMaintenance] = useState(
     maintenances[0].encoding.find((item) => item.subtype === "501")
   );
+
   const handleClick = (key) => {
     setSelectedMaintenance(maintenances[0].encoding[key]);
   };
@@ -146,6 +148,39 @@ const RobberyScreen = () => {
     );
   };
 
+  // Egg starter Function
+  // const { visible, setVisible, bindings } = useModal();
+  const [count, setCount] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false)
+  const [message, setMessage] = useState("");
+
+  const eggClick = () => {
+    let newCount = count + 1;
+    setCount(newCount);
+    console.log(count);
+
+    if (newCount === 6 || newCount === 10 || newCount === 13 || newCount === 16) {
+      setModalOpen(true);
+      if (newCount === 6) {
+        setMessage("Yo, homie, ain't no need to mash that button like a crazy")
+      }
+      else if (newCount === 10) {
+        setMessage("Don't dump your drama on me, dude!")
+      }
+      else if (newCount === 13) {
+        setMessage("Really? For real, bro , seek some help!")
+      }
+      else if (newCount === 16) {
+        setMessage("Dude!!!!!")
+        setCount(0);
+      }
+    }
+  }
+
+  const closeModal = (event) => {
+    setModalOpen(false);
+  }
+
   return (
     <div className="w-full flex flex-row h-full font-titillium">
       {/* Left Side Options banner */}
@@ -268,6 +303,7 @@ const RobberyScreen = () => {
                         onClick={() => {
                           fire();
                           handleCopyClick();
+                          eggClick();
                         }}
                         id="copyBtn"
                         className="dark:bg-transparent dark:text-purple-500 dark:hover:bg-purple-500 dark:hover:text-white dark:border-purple-500 dark:hover:border-purple-500 bg-black text-white hover:bg-white hover:text-black hover:border-black border inline-flex font-bold text-center uppercase align-middle px-4 py-2 rounded-lg cursor-pointer leading-normal text-sm transition-all maxminiteams:text-[0.85rem] maxminiteams:py-1 maxminiteams:px-9 max3xl:text-[0.85rem] max3xl:py-1.5 max3xl:px-9"
@@ -395,6 +431,13 @@ const RobberyScreen = () => {
           </div>
         </div>
       </div>
+      {/* Modal egg Starter */}
+      <Modal visible={modalOpen} onClose={closeModal}>
+        <Modal.Content>
+          <p>{message}</p>
+        </Modal.Content>
+      </Modal>
+
     </div>
   );
 };
