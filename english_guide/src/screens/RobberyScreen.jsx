@@ -7,7 +7,6 @@ import { TbCopy } from "react-icons/tb";
 import ReactCanvasConfetti from "react-canvas-confetti";
 import { maintenances } from "../constants/maintenances";
 import BackgroundPatron from "../components/BackgroundPatron";
-import { Modal, useModal } from "@geist-ui/core";
 
 const RobberyScreen = () => {
   const { language } = useContext(LanguageContext);
@@ -126,16 +125,12 @@ const RobberyScreen = () => {
         "7.- ¿Podría decirnos que ruta tomaron los intrusos para acceder?",
     },
     {
-      english:
-        "8.- JUST CRA : Is anyone arrested?",
-      español:
-        "8.- SOLO CRA: ¿Hay detenidos?",
+      english: "8.- JUST CRA : Is anyone arrested?",
+      español: "8.- SOLO CRA: ¿Hay detenidos?",
     },
     {
-      english:
-        "9.- JUST CRA : Has something been taken from your property?",
-      español:
-        "9.- SOLO CRA: ¿Se han llevado algo de su propiedad?",
+      english: "9.- JUST CRA : Has something been taken from your property?",
+      español: "9.- SOLO CRA: ¿Se han llevado algo de su propiedad?",
     },
   ];
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -151,35 +146,68 @@ const RobberyScreen = () => {
   // Egg starter Function
   // const { visible, setVisible, bindings } = useModal();
   const [count, setCount] = useState(0);
-  const [modalOpen, setModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false);
   const [message, setMessage] = useState("");
+
+  const messages = {
+    english: {
+      six: "You diggin' that confetti, huh!!",
+      eleven: "Yo, homie, ain't no need to mash that button like a crazy",
+      sixteen: "Don't dump your drama on me, dude!",
+      twentyOne: "Really? For real, bro!",
+      twentySix: "Dude!!!!!",
+      thirtyTwo:
+        "All right!!, you asked for it, homie! I'm gonna snitch to the TITI",
+      thirtySeven: "Mathias, it's gotta be you, man! Cool your jets!",
+    },
+    español: {
+      six: "Te mola el confeti ehh!!",
+      eleven: "Eh, amigo, no necesitas aporrear ese botón como un loco",
+      sixteen: "¡No descargues tus dramas sobre mí, tío!",
+      twentyOne: "¿En serio? De verdad, tío!",
+      twentySix: "¡Tío!!!!!",
+      thirtyTwo:
+        "¡¡Muy bien!!, lo has pedido, ¡amigo! Voy a chivarme a la TITI",
+      thirtySeven: "Mathias fijo que eres tu! calma hombre!",
+    },
+  };
 
   const eggClick = () => {
     let newCount = count + 1;
     setCount(newCount);
     console.log(count);
 
-    if (newCount === 6 || newCount === 10 || newCount === 13 || newCount === 16) {
+    if (
+      newCount === 6 ||
+      newCount === 11 ||
+      newCount === 16 ||
+      newCount === 21 ||
+      newCount === 26 ||
+      newCount === 32 ||
+      newCount === 37
+    ) {
       setModalOpen(true);
       if (newCount === 6) {
-        setMessage("Yo, homie, ain't no need to mash that button like a crazy")
-      }
-      else if (newCount === 10) {
-        setMessage("Don't dump your drama on me, dude!")
-      }
-      else if (newCount === 13) {
-        setMessage("Really? For real, bro , seek some help!")
-      }
-      else if (newCount === 16) {
-        setMessage("Dude!!!!!")
+        setMessage(messages[language].six);
+      } else if (newCount === 11) {
+        setMessage(messages[language].eleven);
+      } else if (newCount === 16) {
+        setMessage(messages[language].sixteen);
+      } else if (newCount === 21) {
+        setMessage(messages[language].twentyOne);
+      } else if (newCount === 26) {
+        setMessage(messages[language].twentySix);
+      } else if (newCount === 32) {
+        setMessage(messages[language].thirtyTwo);
+      } else if (newCount === 37) {
+        setMessage(messages[language].thirtySeven);
         setCount(0);
       }
+      setTimeout(() => {
+        setModalOpen(false);
+      }, 2300);
     }
-  }
-
-  const closeModal = (event) => {
-    setModalOpen(false);
-  }
+  };
 
   return (
     <div className="w-full flex flex-row h-full font-titillium">
@@ -432,12 +460,29 @@ const RobberyScreen = () => {
         </div>
       </div>
       {/* Modal egg Starter */}
-      <Modal visible={modalOpen} onClose={closeModal}>
-        <Modal.Content>
-          <p>{message}</p>
-        </Modal.Content>
-      </Modal>
+      {modalOpen && (
+        <div className="fixed z-10 inset-0 overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen text-center">
+            <div className="fixed inset-0 transition-opacity">
+              <div className="absolute inset-0 backdrop-blur-hue"></div>
+            </div>
 
+            <div className="inline-block align-bottom border dark:border-[#333] bg-white dark:bg-black rounded-lg text-left overflow-hidden shadow-xl transform transition-all">
+              <div className="bg-white dark:bg-black p-5">
+                <div className="flex justify-center items-center">
+                  <div className="my-3 text-center">
+                    <div className="mt-2">
+                      <p className="text-sm text-black dark:text-white">
+                        {message}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

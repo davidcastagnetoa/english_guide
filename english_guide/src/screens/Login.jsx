@@ -98,7 +98,6 @@ const Login = () => {
         style={{
           background: theme === "light" ? "#fafafa" : "black",
           color: theme === "light" ? "black" : "white",
-          border: theme === "light" ? "1px solid #eaeaea" : "1px solid #333",
         }}
         className="dark:bg-black bg-gray-50 text-slate-900 dark:text-white h-screen flex flex-col justify-center"
       >
@@ -114,8 +113,6 @@ const Login = () => {
                 style={{
                   background: theme === "light" ? "#fafafa" : "black",
                   color: theme === "light" ? "black" : "white",
-                  border:
-                    theme === "light" ? "1px solid #eaeaea" : "1px solid #333",
                   width: "23rem",
                   maxHeight: "fit-content",
                   position: "relative",
