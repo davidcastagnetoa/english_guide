@@ -129,7 +129,7 @@ const CameraDB = ({ cameraData }) => {
           </Text>
         </Card>
       </div>
-      <div className="bottomside flex flex-row items-center w-full h-[50%] justify-between gap-1 pt-1">
+      <div className="bottomside flex flex-row items-start w-full h-[50%] justify-between gap-1 pt-1">
         {/* Maintenances Camera Card */}
         <Card
           shadow
@@ -139,7 +139,6 @@ const CameraDB = ({ cameraData }) => {
             background: theme === "light" ? "#fafafa" : "black",
             color: theme === "light" ? "black" : "white",
             border: theme === "light" ? "1px solid #eaeaea" : "1px solid #333",
-            height: "-webkit-fill-available",
           }}
         >
           <Card.Content>
@@ -216,7 +215,6 @@ const CameraDB = ({ cameraData }) => {
             background: theme === "light" ? "#fafafa" : "black",
             color: theme === "light" ? "black" : "white",
             border: theme === "light" ? "1px solid #eaeaea" : "1px solid #333",
-            height: "-webkit-fill-available",
           }}>
           <Card.Content>
             <Text
