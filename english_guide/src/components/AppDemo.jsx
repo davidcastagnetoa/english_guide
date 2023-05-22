@@ -2,8 +2,8 @@ import React from 'react'
 
 const AppDemo = () => {
     return (
-        <div className='flex items-center content-center'>
-            <div className="bg-contain bg-center bg-no-repeat w-[355px] h-[710px] shrink-0 relative bg-movil">
+        <div className='flex items-start content-center'>
+            <div className="bg-contain bg-center bg-no-repeat w-[361px] h-[742px] relative bg-movil">
                 <iframe frameborder="0"
                     style={{
                         position: "absolute",

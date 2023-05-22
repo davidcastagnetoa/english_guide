@@ -63,7 +63,7 @@ const CameraDB = ({ cameraData }) => {
 
   return (
     <div className="flex flex-col justify-start w-[60%] pr-5 z-100">
-      <div className="topside flex flex-row items-center w-full h-[50%] justify-between gap-1">
+      <div className="topside flex flex-row items-center w-full h-[50%] justify-between gap-1 pb-1">
         {/* Image Camera */}
         <div className="rounded-lg">
           {cameraData?.icon ? (
@@ -86,7 +86,7 @@ const CameraDB = ({ cameraData }) => {
             color: theme === "light" ? "black" : "white",
             border: theme === "light" ? "1px solid #eaeaea" : "1px solid #333",
             // minWidth: "16rem",
-            height: "19.5rem"
+            height: "-webkit-fill-available"
           }}
         >
           <Text
@@ -129,7 +129,7 @@ const CameraDB = ({ cameraData }) => {
           </Text>
         </Card>
       </div>
-      <div className="bottomside flex flex-row items-center w-full h-[50%] justify-between gap-1">
+      <div className="bottomside flex flex-row items-center w-full h-[50%] justify-between gap-1 pt-1">
         {/* Maintenances Camera Card */}
         <Card
           shadow
@@ -139,7 +139,7 @@ const CameraDB = ({ cameraData }) => {
             background: theme === "light" ? "#fafafa" : "black",
             color: theme === "light" ? "black" : "white",
             border: theme === "light" ? "1px solid #eaeaea" : "1px solid #333",
-            height: "19.5rem",
+            height: "-webkit-fill-available",
           }}
         >
           <Card.Content>
@@ -216,7 +216,7 @@ const CameraDB = ({ cameraData }) => {
             background: theme === "light" ? "#fafafa" : "black",
             color: theme === "light" ? "black" : "white",
             border: theme === "light" ? "1px solid #eaeaea" : "1px solid #333",
-            Height: "19.5rem",
+            height: "-webkit-fill-available",
           }}>
           <Card.Content>
             <Text
