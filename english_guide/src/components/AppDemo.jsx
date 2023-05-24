@@ -3,7 +3,7 @@ import React from 'react'
 const AppDemo = () => {
     return (
         <div className='flex items-start content-center'>
-            <div className="bg-contain bg-center bg-no-repeat w-[361px] h-[720px] relative bg-movil">
+            <div className="bg-contain bg-center bg-no-repeat w-[361px] h-[720px] relative bg-movil max3xl:w-[314px] max3xl:h-[622px]">
                 <iframe frameborder="0"
                     style={{
                         position: "absolute",
