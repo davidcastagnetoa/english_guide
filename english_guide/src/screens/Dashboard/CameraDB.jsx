@@ -70,7 +70,7 @@ const CameraDB = ({ cameraData }) => {
             <img
               src={cameraData.icon}
               alt={cameraData.name}
-              className="h-96 w-[418px] max-w-[418px] object-contain p-6 max3xl:max-w-[300px] max3xl:w-[300px] max3xl:h-fit maxminiteams:w-[250px]"
+              className="h-96 w-[418px] max-w-[418px] object-contain p-4 max3xl:max-w-[300px] max3xl:w-[300px] max3xl:h-fit maxminiteams:w-[250px]"
             />
           ) : (
             <ImageLoader className="p-2 rounded-[1.5rem]" />
@@ -109,7 +109,7 @@ const CameraDB = ({ cameraData }) => {
           </Text>
           <Spacer h={0.5} />
           <Text p>
-            <ol className="w-fit h-full flex flex-col justify-center items-stretch gap-0.5 text-sm max3xl:text-[0.78rem] max3xl:gap-0.5">
+            <ol className="w-fit h-full flex flex-col justify-center items-stretch gap-0.5 text-sm max3xl:text-[0.78rem] max3xl:gap-[0.075rem]">
               {cameraData?.icon ? (
                 cameraData?.features.map((Camfeature, index) => (
                   <li
