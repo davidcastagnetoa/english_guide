@@ -1,16 +1,18 @@
-import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
 import logo from "../assets/images/logo_securitas.webp";
 import { IoMdSearch } from "react-icons/io";
 import Switcher from "./Switcher";
 import DropdownMenu from "./DropdownMenu";
 import { LanguageContext } from "./context/LanguageContext";
+import { SearchContext } from "./context/SearchContext";
+import { useSearch } from "./context/SearchContext";
+import { Button } from "@geist-ui/core";
+import { Search } from "@geist-ui/icons";
 
 const Header = (props) => {
-  const { searchTerm, setSearchTerm } = props;
-  const { language } = useContext(LanguageContext);
 
-  const navigate = useNavigate();
+  const { searchTerm, setSearchTerm, handleSearch } = useSearch();
+  const { language } = useContext(LanguageContext);
 
   return (
     <header className="z-[200]">
@@ -41,13 +43,14 @@ const Header = (props) => {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 value={searchTerm}
                 placeholder={language === "english" ? "Search" : "Buscar"}
-                onFocus={() => navigate("/search")}
+                // onFocus={() => navigate("/search")}
                 className="ml-2 w-full bg-transparent outline-none"
               />
             </div>
+            <Button type="secondary" iconRight={<Search />} onClick={handleSearch}>Search</Button>
             {/* Toggle dark/light button */}
             <Switcher />
-            </div>
+          </div>
         </div>
       </nav>
     </header>

@@ -4,6 +4,7 @@ import HomeScreen from "./screens/Home";
 import HomeSection from "./screens/HomeSection";
 import Login from "./screens/Login";
 import { LanguageProvider } from "./components/context/LanguageContext";
+import { SearchProvider } from "./components/context/SearchContext";
 import { useEffect } from "react";
 
 const App = () => {
@@ -20,13 +21,15 @@ const App = () => {
   }, []);
 
   return (
-      <LanguageProvider>
+    <LanguageProvider>
+      <SearchProvider>
         <Routes>
           <Route path="/*" element={<HomeScreen />} />
           <Route path="/*" element={<HomeSection />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-      </LanguageProvider>
+      </SearchProvider>
+    </LanguageProvider>
   );
 };
 
