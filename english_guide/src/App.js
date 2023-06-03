@@ -21,15 +21,15 @@ const App = () => {
   }, []);
 
   return (
-    <LanguageProvider>
-      <SearchProvider>
+    <SearchProvider>
+      <LanguageProvider>
         <Routes>
           <Route path="/*" element={<HomeScreen />} />
           <Route path="/*" element={<HomeSection />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-      </SearchProvider>
-    </LanguageProvider>
+      </LanguageProvider>
+    </SearchProvider>
   );
 };
 

@@ -22,11 +22,6 @@ const DropdownMenu = () => {
   };
 
   const menuClassName = isOpen ? "flex " : "hidden";
-  // const logout = () => {
-  //   localStorage.clear();
-  //   navigate("/");
-  // };
-
   return (
     <div className="relative text-gray-700 dark:text-gray-300">
       <button

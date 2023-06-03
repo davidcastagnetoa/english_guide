@@ -16,7 +16,7 @@ export const SearchProvider = ({ children }) => {
       name: "Jane Doe",
       url: "https://www.example.com/jane-doe",
     },
-  ]
+  ];
 
   const handleSearch = () => {
     // Get the text that the user typed in
@@ -24,6 +24,7 @@ export const SearchProvider = ({ children }) => {
 
     // Search for the term in the application's data
     const results = data.filter((item) => item.name.includes(term));
+    console.log(results);
 
     // If the results are empty, return a card with the text "No found"
     if (results.length === 0) {
@@ -32,8 +33,8 @@ export const SearchProvider = ({ children }) => {
           <h1>No results found</h1>
         </div>
       );
-      console.log("No results found")
     }
+    console.log("No results found");
 
     // Otherwise, return a card for each result
     return (
@@ -46,7 +47,6 @@ export const SearchProvider = ({ children }) => {
         ))}
       </div>
     );
-    console.log(results)
   };
 
   return (
