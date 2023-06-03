@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
-import logosp from "../assets/images/es-img.svg";
-import logoen from "../assets/images/uk-img.svg";
+import logosp from "../assets/images/es-img.png";
+import logoen from "../assets/images/uk-img.png";
 import { LanguageContext } from "./context/LanguageContext";
 
 const DropdownMenu = () => {
@@ -36,7 +36,7 @@ const DropdownMenu = () => {
       >
         <img
           src={language === "english" ? logoen : logosp}
-          className="w-7"
+          className="w-9"
           alt="language"
         />
       </button>
